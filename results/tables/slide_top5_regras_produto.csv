@@ -1,0 +1,6 @@
+antecedents_str,consequents_str,support,confidence,lift,n_ant,n_con
+Organic Yellow Onion,Organic Garlic,0.0074,0.1930,5.2330,1,1
+Organic Garlic,Organic Yellow Onion,0.0074,0.2007,5.2330,1,1
+Limes,Organic Cilantro,0.0058,0.1220,5.2136,1,1
+Organic Cilantro,Limes,0.0058,0.2493,5.2136,1,1
+Large Lemon,Limes,0.0094,0.1825,3.8158,1,1

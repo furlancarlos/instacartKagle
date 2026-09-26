@@ -1,0 +1,35 @@
+2026-09-26 13:33:23 | INFO | ============================================================
+2026-09-26 13:33:23 | INFO | STEP 05c — Construir transações AISLE e DEPARTMENT
+2026-09-26 13:33:23 | INFO | ============================================================
+2026-09-26 13:33:23 | INFO | N_SAMPLE_ORDERS=400,000
+2026-09-26 13:33:23 | INFO | [RAM] início: 143.8 MB
+2026-09-26 13:33:23 | INFO | Carregando transações de transactions.parquet ...
+2026-09-26 13:33:24 | INFO |   cestas: 368,250
+2026-09-26 13:33:24 | INFO | Carregando products.csv, aisles.csv, departments.csv ...
+2026-09-26 13:33:25 | INFO |   produtos mapeados: 49,651
+2026-09-26 13:33:25 | INFO |   aisles distintos:  134
+2026-09-26 13:33:25 | INFO |   departments distintos: 21
+2026-09-26 13:33:25 | INFO | Convertendo cestas para nível de AISLE ...
+2026-09-26 13:33:27 | INFO |   cestas válidas: 362,082
+2026-09-26 13:33:27 | INFO |   produtos sem mapeamento: 0 (ignorados)
+2026-09-26 13:33:27 | INFO | Convertendo cestas para nível de DEPARTMENT ...
+2026-09-26 13:33:28 | INFO |   cestas válidas: 348,840
+2026-09-26 13:33:28 | INFO |   produtos sem mapeamento: 0 (ignorados)
+2026-09-26 13:33:28 | INFO | Aplicando TransactionEncoder [aisle] ...
+2026-09-26 13:33:28 | INFO | [RAM] antes [aisle]: 269.6 MB
+2026-09-26 13:33:30 | INFO |   shape: (362082, 126)  | memória: 43.5 MB
+2026-09-26 13:33:30 | INFO | [RAM] depois [aisle]: 313.1 MB
+2026-09-26 13:33:30 | INFO | Salvando em encoded_aisle_400k.parquet ...
+2026-09-26 13:33:31 | INFO |   salvo: C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\cache\encoded_aisle_400k.parquet  (2.7 MB)
+2026-09-26 13:33:31 | INFO | Aplicando TransactionEncoder [department] ...
+2026-09-26 13:33:31 | INFO | [RAM] antes [department]: 311.8 MB
+2026-09-26 13:33:31 | INFO |   shape: (348840, 21)  | memória: 7.0 MB
+2026-09-26 13:33:31 | INFO | [RAM] depois [department]: 318.8 MB
+2026-09-26 13:33:31 | INFO | Salvando em encoded_department_400k.parquet ...
+2026-09-26 13:33:31 | INFO |   salvo: C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\cache\encoded_department_400k.parquet  (0.7 MB)
+2026-09-26 13:33:31 | INFO | ============================================================
+2026-09-26 13:33:31 | INFO | Resumo:
+2026-09-26 13:33:31 | INFO |   AISLE      : (362082, 126)  (média de 6.73 aisles/cesta)
+2026-09-26 13:33:32 | INFO |   DEPARTMENT : (348840, 21)  (média de 4.57 depts/cesta)
+2026-09-26 13:33:32 | INFO | [RAM] fim: 314.2 MB
+2026-09-26 13:33:32 | INFO | STEP 05c concluído.

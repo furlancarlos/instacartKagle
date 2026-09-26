@@ -1,0 +1,11 @@
+antecedents_str,consequents_str,support,confidence,lift,n_ant,n_con
+"fresh fruits, packaged cheese, yogurt","milk, packaged vegetables fruits",0.0205,0.3057,2.6898,3,2
+"fresh fruits, milk, packaged cheese","packaged vegetables fruits, yogurt",0.0205,0.3335,2.5888,3,2
+"milk, packaged vegetables fruits, yogurt","fresh fruits, packaged cheese",0.0205,0.3980,2.5304,3,2
+"fresh fruits, packaged cheese, yogurt","fresh vegetables, milk",0.0226,0.3369,2.5142,3,2
+"fresh vegetables, milk, yogurt","fresh fruits, packaged cheese",0.0226,0.3905,2.4825,3,2
+"fresh fruits, milk, packaged cheese","fresh vegetables, yogurt",0.0226,0.3676,2.4762,3,2
+"milk, packaged cheese, packaged vegetables fruits","fresh fruits, yogurt",0.0205,0.4724,2.4312,3,2
+"lunch meat, packaged vegetables fruits","fresh fruits, packaged cheese",0.0201,0.3803,2.4177,2,2
+"fresh fruits, packaged cheese, packaged vegetables fruits","fresh vegetables, yogurt",0.0322,0.3567,2.4031,3,2
+"packaged cheese, packaged vegetables fruits, yogurt","fresh fruits, milk",0.0205,0.4258,2.3941,3,2

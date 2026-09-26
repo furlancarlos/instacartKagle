@@ -1,0 +1,11 @@
+antecedents_str,consequents_str,support,confidence,lift,n_ant,n_con
+"deli, frozen","dairy eggs, produce, snacks",0.0512,0.4848,1.8377,2,3
+"beverages, deli","dairy eggs, produce, snacks",0.0524,0.4670,1.7700,2,3
+"bakery, frozen","dairy eggs, produce, snacks",0.0540,0.4669,1.7697,2,3
+"deli, frozen, produce","dairy eggs, snacks",0.0512,0.5367,1.7265,3,2
+"dairy eggs, frozen, produce, snacks",deli,0.0512,0.4118,1.7137,4,1
+"beverages, deli, produce","dairy eggs, snacks",0.0524,0.5327,1.7135,3,2
+"dairy eggs, deli, frozen","produce, snacks",0.0512,0.5709,1.7106,3,2
+"bakery, frozen, produce","dairy eggs, snacks",0.0540,0.5308,1.7075,3,2
+"bakery, snacks","dairy eggs, frozen, produce",0.0540,0.4083,1.7038,2,3
+"bakery, produce, snacks","dairy eggs, frozen",0.0540,0.4691,1.7018,3,2

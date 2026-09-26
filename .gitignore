@@ -4,3 +4,52 @@
 
 # Ignorar toda a pasta database
 database/
+
+# Ignorar arquivos bkp
+bkp*
+
+# --- Ambiente virtual ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# --- Jupyter / IPython (caso use algum dia) ---
+.ipynb_checkpoints/
+
+# --- IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Sistema operacional ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Dados intermediários (grandes e reproduzíveis) ---
+results/cache/
+*.parquet
+
+# --- Logs temporários ---
+*.log.tmp
+
+# --- Mas mantém os logs finais! ---
+!results/logs/*.log
+
+# --- Exceções: nada disso deve ser ignorado ---
+!requirements.txt
+!README.md

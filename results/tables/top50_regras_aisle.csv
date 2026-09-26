@@ -1,0 +1,51 @@
+antecedents,consequents,support,confidence,lift
+"frozenset({'packaged cheese', 'yogurt', 'fresh fruits'})","frozenset({'milk', 'packaged vegetables fruits'})",0.020481548378544087,0.3056883759274526,2.6898407867156893
+"frozenset({'milk', 'fresh fruits', 'packaged vegetables fruits'})","frozenset({'packaged cheese', 'yogurt'})",0.020481548378544087,0.22026196204223472,2.638290771781284
+"frozenset({'packaged cheese', 'yogurt'})","frozenset({'milk', 'fresh fruits', 'packaged vegetables fruits'})",0.020481548378544087,0.24532733467861986,2.638290771781284
+"frozenset({'milk', 'packaged cheese', 'fresh fruits'})","frozenset({'yogurt', 'packaged vegetables fruits'})",0.020481548378544087,0.3335132218024825,2.5888422239138715
+"frozenset({'yogurt', 'milk', 'packaged vegetables fruits'})","frozenset({'packaged cheese', 'fresh fruits'})",0.020481548378544087,0.3980462669743975,2.530380077225742
+"frozenset({'packaged cheese', 'yogurt'})","frozenset({'milk', 'fresh fruits', 'fresh vegetables'})",0.02257223501858695,0.27036951271957393,2.5284346790776584
+"frozenset({'milk', 'fresh fruits', 'fresh vegetables'})","frozenset({'packaged cheese', 'yogurt'})",0.02257223501858695,0.21109044888682268,2.528434679077658
+"frozenset({'packaged cheese', 'yogurt', 'fresh fruits'})","frozenset({'milk', 'fresh vegetables'})",0.02257223501858695,0.33689200329760927,2.514170624057153
+"frozenset({'yogurt', 'milk', 'fresh vegetables'})","frozenset({'packaged cheese', 'fresh fruits'})",0.02257223501858695,0.39051077452338867,2.4824769525084736
+"frozenset({'milk', 'packaged cheese', 'fresh fruits'})","frozenset({'yogurt', 'fresh vegetables'})",0.02257223501858695,0.36755711458895485,2.4761533697619953
+"frozenset({'lunch meat', 'fresh fruits'})","frozenset({'packaged cheese', 'packaged vegetables fruits'})",0.02011975187940853,0.2729895825526493,2.4324395617144496
+"frozenset({'packaged cheese', 'milk', 'packaged vegetables fruits'})","frozenset({'yogurt', 'fresh fruits'})",0.020481548378544087,0.47235668789808916,2.4312255397099554
+"frozenset({'packaged cheese', 'milk'})","frozenset({'yogurt', 'fresh fruits', 'packaged vegetables fruits'})",0.020481548378544087,0.2601283805114175,2.4228997343297594
+"frozenset({'lunch meat', 'packaged vegetables fruits'})","frozenset({'packaged cheese', 'fresh fruits'})",0.02011975187940853,0.38031845471156356,2.417684376538368
+"frozenset({'yogurt', 'fresh vegetables'})","frozenset({'packaged cheese', 'fresh fruits', 'packaged vegetables fruits'})",0.0321584613430107,0.21664464993394983,2.4030612424527287
+"frozenset({'packaged cheese', 'fresh fruits', 'packaged vegetables fruits'})","frozenset({'yogurt', 'fresh vegetables'})",0.0321584613430107,0.3567074104708513,2.4030612424527282
+"frozenset({'packaged cheese', 'yogurt', 'packaged vegetables fruits'})","frozenset({'milk', 'fresh fruits'})",0.020481548378544087,0.42576644850155015,2.3940858044560476
+"frozenset({'milk', 'fresh fruits', 'fresh vegetables'})","frozenset({'yogurt', 'packaged vegetables fruits'})",0.032942814058693884,0.30807376414070975,2.3913725650130013
+"frozenset({'yogurt', 'packaged vegetables fruits'})","frozenset({'milk', 'fresh fruits', 'fresh vegetables'})",0.032942814058693884,0.255713244436822,2.3913725650130013
+"frozenset({'milk', 'fresh fruits', 'packaged vegetables fruits'})","frozenset({'yogurt', 'fresh vegetables'})",0.032942814058693884,0.3542724761650183,2.3866576127929404
+"frozenset({'yogurt', 'fresh vegetables'})","frozenset({'milk', 'fresh fruits', 'packaged vegetables fruits'})",0.032942814058693884,0.22192866578599735,2.38665761279294
+"frozenset({'milk', 'fresh fruits', 'fresh vegetables'})","frozenset({'packaged cheese', 'packaged vegetables fruits'})",0.028601256069067226,0.26747249341391605,2.383280228376256
+"frozenset({'packaged cheese', 'packaged vegetables fruits'})","frozenset({'milk', 'fresh fruits', 'fresh vegetables'})",0.028601256069067226,0.25484791810217544,2.383280228376256
+"frozenset({'milk', 'packaged vegetables fruits', 'fresh vegetables'})","frozenset({'packaged cheese', 'fresh fruits'})",0.028601256069067226,0.37486425830739156,2.383012050571596
+"frozenset({'packaged cheese', 'yogurt'})","frozenset({'milk', 'packaged vegetables fruits'})",0.022586044045271512,0.2705349168017466,2.3805152918761094
+"frozenset({'yogurt', 'fresh fruits', 'fresh vegetables'})","frozenset({'milk', 'packaged vegetables fruits'})",0.032942814058693884,0.27040261153427636,2.3793510994083418
+"frozenset({'milk', 'packaged vegetables fruits'})","frozenset({'yogurt', 'fresh fruits', 'fresh vegetables'})",0.032942814058693884,0.28987338695958587,2.3793510994083418
+"frozenset({'packaged cheese', 'fresh fruits', 'fresh vegetables'})","frozenset({'milk', 'packaged vegetables fruits'})",0.028601256069067226,0.2700743252053723,2.376462412671307
+"frozenset({'milk', 'packaged vegetables fruits'})","frozenset({'packaged cheese', 'fresh fruits', 'fresh vegetables'})",0.028601256069067226,0.25167075749106904,2.376462412671307
+"frozenset({'milk', 'yogurt', 'fresh fruits'})","frozenset({'packaged cheese', 'packaged vegetables fruits'})",0.020481548378544087,0.26664749029196033,2.375929141153007
+"frozenset({'packaged cheese', 'fresh fruits', 'packaged vegetables fruits'})","frozenset({'milk', 'fresh vegetables'})",0.028601256069067226,0.3172502527341237,2.367587411073766
+"frozenset({'milk', 'fresh vegetables'})","frozenset({'packaged cheese', 'fresh fruits', 'packaged vegetables fruits'})",0.028601256069067226,0.21344655591739148,2.367587411073766
+"frozenset({'packaged cheese', 'fresh fruits', 'fresh vegetables'})","frozenset({'yogurt', 'packaged vegetables fruits'})",0.0321584613430107,0.30366410222975615,2.357143280528975
+"frozenset({'yogurt', 'packaged vegetables fruits'})","frozenset({'packaged cheese', 'fresh fruits', 'fresh vegetables'})",0.0321584613430107,0.24962483385499293,2.357143280528975
+"frozenset({'packaged cheese', 'milk'})","frozenset({'yogurt', 'fresh fruits', 'fresh vegetables'})",0.02257223501858695,0.2866813988565015,2.353150486506161
+"frozenset({'yogurt', 'fresh fruits', 'fresh vegetables'})","frozenset({'packaged cheese', 'packaged vegetables fruits'})",0.0321584613430107,0.26396445411679365,2.3520222825946666
+"frozenset({'packaged cheese', 'packaged vegetables fruits'})","frozenset({'yogurt', 'fresh fruits', 'fresh vegetables'})",0.0321584613430107,0.2865439511762969,2.3520222825946666
+"frozenset({'packaged cheese', 'yogurt', 'fresh vegetables'})","frozenset({'milk', 'fresh fruits'})",0.02257223501858695,0.41639494599551663,2.341389822433318
+"frozenset({'packaged cheese', 'milk', 'fresh vegetables'})","frozenset({'yogurt', 'fresh fruits'})",0.02257223501858695,0.4533754923170799,2.3335290983276415
+"frozenset({'lunch meat', 'fresh vegetables'})","frozenset({'packaged cheese', 'fresh fruits'})",0.022066824641931937,0.3665810240411084,2.3303555312133963
+"frozenset({'packaged cheese', 'fresh fruits', 'packaged vegetables fruits'})","frozenset({'yogurt', 'milk'})",0.020481548378544087,0.22718500137854977,2.32293007085587
+"frozenset({'yogurt', 'milk'})","frozenset({'packaged cheese', 'fresh fruits', 'packaged vegetables fruits'})",0.020481548378544087,0.20942053541172484,2.3229300708558696
+"frozenset({'yogurt', 'packaged vegetables fruits', 'fresh vegetables'})","frozenset({'packaged cheese', 'fresh fruits'})",0.0321584613430107,0.36269623722900574,2.305659941858086
+"frozenset({'packaged cheese', 'fresh fruits'})","frozenset({'yogurt', 'packaged vegetables fruits', 'fresh vegetables'})",0.0321584613430107,0.20443133536992172,2.305659941858086
+"frozenset({'chips pretzels', 'fresh fruits'})",frozenset({'fresh dips tapenades'}),0.023099739837937262,0.2229151675061965,2.3001216745313227
+frozenset({'fresh dips tapenades'}),"frozenset({'chips pretzels', 'fresh fruits'})",0.023099739837937262,0.23835171411473022,2.300121674531322
+"frozenset({'fresh fruits', 'packaged vegetables fruits', 'bread'})","frozenset({'yogurt', 'fresh vegetables'})",0.020412503245121272,0.3410233931619988,2.297401385061173
+"frozenset({'yogurt', 'fresh fruits', 'packaged vegetables fruits'})","frozenset({'milk', 'fresh vegetables'})",0.032942814058693884,0.30683747491896896,2.289878531547263
+"frozenset({'milk', 'fresh vegetables'})","frozenset({'yogurt', 'fresh fruits', 'packaged vegetables fruits'})",0.032942814058693884,0.24584690218063396,2.289878531547263
+"frozenset({'packaged vegetables fruits', 'bread'})","frozenset({'yogurt', 'fresh fruits', 'fresh vegetables'})",0.020412503245121272,0.2785167878810717,2.2861333784356686

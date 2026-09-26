@@ -1,0 +1,31 @@
+2026-09-26 12:40:10 | INFO | ============================================================
+2026-09-26 12:40:10 | INFO | STEP 04 — TransactionEncoder (matriz booleana)
+2026-09-26 12:40:10 | INFO | ============================================================
+2026-09-26 12:40:10 | INFO | Parâmetro: N_SAMPLE_ORDERS=400,000
+2026-09-26 12:40:10 | INFO | [RAM] início do script: 143.9 MB
+2026-09-26 12:40:10 | INFO | Carregando transações de transactions.parquet ...
+2026-09-26 12:40:12 | INFO |   cestas carregadas: 368,250
+2026-09-26 12:40:12 | INFO | Aplicando TransactionEncoder ...
+2026-09-26 12:40:12 | INFO | [RAM] antes do encoder: 457.5 MB
+2026-09-26 12:40:13 | INFO | [RAM] após transform: 2,550.0 MB
+2026-09-26 12:40:13 | INFO |   matriz bruta: shape=(368250, 5991) dtype=bool
+2026-09-26 12:40:13 | INFO |   células: 2,206,185,750  (2.05 Gi células)
+2026-09-26 12:40:13 | INFO |   memória teórica da matriz: 2,104.0 MB (bool = 1 byte)
+2026-09-26 12:40:13 | INFO | Convertendo para DataFrame ...
+2026-09-26 12:40:29 | INFO | [RAM] após DataFrame: 2,562.2 MB
+2026-09-26 12:40:29 | INFO | ------------------------------------------------------------
+2026-09-26 12:40:29 | INFO | Sanity check:
+2026-09-26 12:40:29 | INFO |   shape         : (368250, 5991)
+2026-09-26 12:40:29 | INFO |   dtype         : [dtype('bool')]
+2026-09-26 12:40:29 | INFO |   memória (df)  : 2,104.0 MB
+2026-09-26 12:40:31 | INFO |   total de True : 3,378,062
+2026-09-26 12:40:33 | INFO |   item mais frequente: 'Banana' (58,636 cestas)
+2026-09-26 12:40:33 | INFO |   item menos frequente: 'Prosecco' (91 cestas)
+2026-09-26 12:40:33 | INFO |   mediana de frequência: 229 cestas
+2026-09-26 12:40:37 | INFO |   cesta mínima  : 2
+2026-09-26 12:40:37 | INFO |   cesta mediana : 7
+2026-09-26 12:40:37 | INFO |   cesta máxima  : 78
+2026-09-26 12:40:37 | INFO | Salvando matriz em encoded_400k.parquet ...
+2026-09-26 12:41:11 | INFO |   salvo: C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\cache\encoded_400k.parquet  (29.4 MB)
+2026-09-26 12:41:11 | INFO | [RAM] fim do script: 2,567.9 MB
+2026-09-26 12:41:11 | INFO | STEP 04 concluído com sucesso.

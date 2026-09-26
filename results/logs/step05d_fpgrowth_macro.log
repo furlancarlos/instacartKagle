@@ -1,0 +1,162 @@
+2026-09-26 13:37:31 | INFO | ============================================================
+2026-09-26 13:37:31 | INFO | STEP 05d — FP-Growth em AISLE e DEPARTMENT
+2026-09-26 13:37:31 | INFO | ============================================================
+2026-09-26 13:37:31 | INFO | [RAM] início: 166.8 MB
+2026-09-26 13:37:31 | INFO | ============================================================
+2026-09-26 13:37:31 | INFO | Pipeline: AISLE
+2026-09-26 13:37:31 | INFO |   supports: [0.1, 0.05, 0.02]
+2026-09-26 13:37:31 | INFO | ============================================================
+2026-09-26 13:37:31 | INFO | Carregando encoded_aisle_400k.parquet ...
+2026-09-26 13:37:31 | INFO |   shape: (362082, 126)  | memória: 43.5 MB
+2026-09-26 13:37:31 | INFO | [RAM] após carregar aisle: 238.0 MB
+2026-09-26 13:37:31 | INFO | ------------------------------------------------------------
+2026-09-26 13:37:31 | INFO | FP-Growth min_support=0.1
+2026-09-26 13:37:31 | INFO | [RAM] antes: 238.0 MB
+2026-09-26 13:37:33 | INFO |   tempo: 2.15s | itemsets: 38
+2026-09-26 13:37:33 | INFO | [RAM] depois: 245.8 MB
+2026-09-26 13:37:33 | INFO |   Distribuição por tamanho:
+2026-09-26 13:37:33 | INFO |     len=1:       16 itemsets | support 0.1013–0.6016
+2026-09-26 13:37:33 | INFO |     len=2:       17 itemsets | support 0.1023–0.3483
+2026-09-26 13:37:33 | INFO |     len=3:        5 itemsets | support 0.1059–0.2014
+2026-09-26 13:37:33 | INFO |   Top 10 itemsets (len>=2):
+2026-09-26 13:37:33 | INFO |     0.3483 | fresh fruits, fresh vegetables
+2026-09-26 13:37:33 | INFO |     0.2915 | fresh fruits, packaged vegetables fruits
+2026-09-26 13:37:33 | INFO |     0.2513 | fresh vegetables, packaged vegetables fruits
+2026-09-26 13:37:33 | INFO |     0.2014 | fresh fruits, fresh vegetables, packaged vegetables fruits
+2026-09-26 13:37:33 | INFO |     0.1943 | fresh fruits, yogurt
+2026-09-26 13:37:33 | INFO |     0.1778 | fresh fruits, milk
+2026-09-26 13:37:33 | INFO |     0.1573 | fresh fruits, packaged cheese
+2026-09-26 13:37:33 | INFO |     0.1484 | fresh vegetables, yogurt
+2026-09-26 13:37:33 | INFO |     0.1352 | fresh vegetables, packaged cheese
+2026-09-26 13:37:33 | INFO |     0.1340 | fresh vegetables, milk
+2026-09-26 13:37:33 | INFO |   salvo: itemsets_aisle_support0_1.parquet  (0.00 MB)
+2026-09-26 13:37:33 | INFO | ------------------------------------------------------------
+2026-09-26 13:37:33 | INFO | FP-Growth min_support=0.05
+2026-09-26 13:37:33 | INFO | [RAM] antes: 230.1 MB
+2026-09-26 13:37:39 | INFO |   tempo: 5.33s | itemsets: 146
+2026-09-26 13:37:39 | INFO | [RAM] depois: 373.5 MB
+2026-09-26 13:37:39 | INFO |   Distribuição por tamanho:
+2026-09-26 13:37:39 | INFO |     len=1:       42 itemsets | support 0.0511–0.6016
+2026-09-26 13:37:39 | INFO |     len=2:       67 itemsets | support 0.0501–0.3483
+2026-09-26 13:37:39 | INFO |     len=3:       33 itemsets | support 0.0507–0.2014
+2026-09-26 13:37:39 | INFO |     len=4:        4 itemsets | support 0.0520–0.0773
+2026-09-26 13:37:39 | INFO |   Top 10 itemsets (len>=2):
+2026-09-26 13:37:39 | INFO |     0.3483 | fresh fruits, fresh vegetables
+2026-09-26 13:37:39 | INFO |     0.2915 | fresh fruits, packaged vegetables fruits
+2026-09-26 13:37:39 | INFO |     0.2513 | fresh vegetables, packaged vegetables fruits
+2026-09-26 13:37:39 | INFO |     0.2014 | fresh fruits, fresh vegetables, packaged vegetables fruits
+2026-09-26 13:37:39 | INFO |     0.1943 | fresh fruits, yogurt
+2026-09-26 13:37:39 | INFO |     0.1778 | fresh fruits, milk
+2026-09-26 13:37:39 | INFO |     0.1573 | fresh fruits, packaged cheese
+2026-09-26 13:37:39 | INFO |     0.1484 | fresh vegetables, yogurt
+2026-09-26 13:37:39 | INFO |     0.1352 | fresh vegetables, packaged cheese
+2026-09-26 13:37:39 | INFO |     0.1340 | fresh vegetables, milk
+2026-09-26 13:37:39 | INFO |   salvo: itemsets_aisle_support0_05.parquet  (0.01 MB)
+2026-09-26 13:37:39 | INFO | ------------------------------------------------------------
+2026-09-26 13:37:39 | INFO | FP-Growth min_support=0.02
+2026-09-26 13:37:39 | INFO | [RAM] antes: 234.5 MB
+2026-09-26 13:37:47 | INFO |   tempo: 7.82s | itemsets: 692
+2026-09-26 13:37:47 | INFO | [RAM] depois: 462.0 MB
+2026-09-26 13:37:47 | INFO |   Distribuição por tamanho:
+2026-09-26 13:37:47 | INFO |     len=1:       65 itemsets | support 0.0203–0.6016
+2026-09-26 13:37:47 | INFO |     len=2:      281 itemsets | support 0.0200–0.3483
+2026-09-26 13:37:47 | INFO |     len=3:      254 itemsets | support 0.0201–0.2014
+2026-09-26 13:37:47 | INFO |     len=4:       85 itemsets | support 0.0200–0.0773
+2026-09-26 13:37:47 | INFO |     len=5:        7 itemsets | support 0.0204–0.0329
+2026-09-26 13:37:47 | INFO |   Top 10 itemsets (len>=2):
+2026-09-26 13:37:47 | INFO |     0.3483 | fresh fruits, fresh vegetables
+2026-09-26 13:37:47 | INFO |     0.2915 | fresh fruits, packaged vegetables fruits
+2026-09-26 13:37:47 | INFO |     0.2513 | fresh vegetables, packaged vegetables fruits
+2026-09-26 13:37:47 | INFO |     0.2014 | fresh fruits, fresh vegetables, packaged vegetables fruits
+2026-09-26 13:37:47 | INFO |     0.1943 | fresh fruits, yogurt
+2026-09-26 13:37:47 | INFO |     0.1778 | fresh fruits, milk
+2026-09-26 13:37:47 | INFO |     0.1573 | fresh fruits, packaged cheese
+2026-09-26 13:37:47 | INFO |     0.1484 | fresh vegetables, yogurt
+2026-09-26 13:37:47 | INFO |     0.1352 | fresh vegetables, packaged cheese
+2026-09-26 13:37:47 | INFO |     0.1340 | fresh vegetables, milk
+2026-09-26 13:37:47 | INFO |   salvo: itemsets_aisle_support0_02.parquet  (0.02 MB)
+2026-09-26 13:37:47 | INFO | ============================================================
+2026-09-26 13:37:47 | INFO | Resumo [aisle]:
+2026-09-26 13:37:47 | INFO |   min_support=0.1    | itemsets=      38 | len>=2=      22 | tempo=2.15s | max_len=3
+2026-09-26 13:37:47 | INFO |   min_support=0.05   | itemsets=     146 | len>=2=     104 | tempo=5.33s | max_len=4
+2026-09-26 13:37:47 | INFO |   min_support=0.02   | itemsets=     692 | len>=2=     627 | tempo=7.82s | max_len=5
+2026-09-26 13:37:49 | INFO | ============================================================
+2026-09-26 13:37:49 | INFO | Pipeline: DEPARTMENT
+2026-09-26 13:37:49 | INFO |   supports: [0.2, 0.1, 0.05]
+2026-09-26 13:37:49 | INFO | ============================================================
+2026-09-26 13:37:49 | INFO | Carregando encoded_department_400k.parquet ...
+2026-09-26 13:37:49 | INFO |   shape: (348840, 21)  | memória: 7.0 MB
+2026-09-26 13:37:49 | INFO | [RAM] após carregar department: 222.6 MB
+2026-09-26 13:37:49 | INFO | ------------------------------------------------------------
+2026-09-26 13:37:49 | INFO | FP-Growth min_support=0.2
+2026-09-26 13:37:49 | INFO | [RAM] antes: 222.6 MB
+2026-09-26 13:37:51 | INFO |   tempo: 1.96s | itemsets: 26
+2026-09-26 13:37:51 | INFO | [RAM] depois: 222.6 MB
+2026-09-26 13:37:51 | INFO |   Distribuição por tamanho:
+2026-09-26 13:37:51 | INFO |     len=1:        9 itemsets | support 0.2024–0.8084
+2026-09-26 13:37:51 | INFO |     len=2:       13 itemsets | support 0.2060–0.6091
+2026-09-26 13:37:51 | INFO |     len=3:        4 itemsets | support 0.2134–0.2638
+2026-09-26 13:37:51 | INFO |   Top 10 itemsets (len>=2):
+2026-09-26 13:37:51 | INFO |     0.6091 | dairy eggs, produce
+2026-09-26 13:37:51 | INFO |     0.3434 | beverages, produce
+2026-09-26 13:37:51 | INFO |     0.3337 | produce, snacks
+2026-09-26 13:37:51 | INFO |     0.3207 | beverages, dairy eggs
+2026-09-26 13:37:51 | INFO |     0.3109 | dairy eggs, snacks
+2026-09-26 13:37:51 | INFO |     0.2994 | frozen, produce
+2026-09-26 13:37:51 | INFO |     0.2757 | dairy eggs, frozen
+2026-09-26 13:37:51 | INFO |     0.2676 | pantry, produce
+2026-09-26 13:37:51 | INFO |     0.2638 | dairy eggs, produce, snacks
+2026-09-26 13:37:51 | INFO |     0.2626 | beverages, dairy eggs, produce
+2026-09-26 13:37:51 | INFO |   salvo: itemsets_department_support0_2.parquet  (0.00 MB)
+2026-09-26 13:37:51 | INFO | ------------------------------------------------------------
+2026-09-26 13:37:51 | INFO | FP-Growth min_support=0.1
+2026-09-26 13:37:51 | INFO | [RAM] antes: 221.5 MB
+2026-09-26 13:37:53 | INFO |   tempo: 2.01s | itemsets: 81
+2026-09-26 13:37:53 | INFO | [RAM] depois: 221.5 MB
+2026-09-26 13:37:53 | INFO |   Distribuição por tamanho:
+2026-09-26 13:37:53 | INFO |     len=1:       13 itemsets | support 0.1187–0.8084
+2026-09-26 13:37:53 | INFO |     len=2:       34 itemsets | support 0.1024–0.6091
+2026-09-26 13:37:53 | INFO |     len=3:       29 itemsets | support 0.1017–0.2638
+2026-09-26 13:37:53 | INFO |     len=4:        5 itemsets | support 0.1013–0.1350
+2026-09-26 13:37:53 | INFO |   Top 10 itemsets (len>=2):
+2026-09-26 13:37:53 | INFO |     0.6091 | dairy eggs, produce
+2026-09-26 13:37:53 | INFO |     0.3434 | beverages, produce
+2026-09-26 13:37:53 | INFO |     0.3337 | produce, snacks
+2026-09-26 13:37:53 | INFO |     0.3207 | beverages, dairy eggs
+2026-09-26 13:37:53 | INFO |     0.3109 | dairy eggs, snacks
+2026-09-26 13:37:53 | INFO |     0.2994 | frozen, produce
+2026-09-26 13:37:53 | INFO |     0.2757 | dairy eggs, frozen
+2026-09-26 13:37:53 | INFO |     0.2676 | pantry, produce
+2026-09-26 13:37:53 | INFO |     0.2638 | dairy eggs, produce, snacks
+2026-09-26 13:37:53 | INFO |     0.2626 | beverages, dairy eggs, produce
+2026-09-26 13:37:53 | INFO |   salvo: itemsets_department_support0_1.parquet  (0.00 MB)
+2026-09-26 13:37:53 | INFO | ------------------------------------------------------------
+2026-09-26 13:37:53 | INFO | FP-Growth min_support=0.05
+2026-09-26 13:37:53 | INFO | [RAM] antes: 221.4 MB
+2026-09-26 13:37:55 | INFO |   tempo: 1.95s | itemsets: 242
+2026-09-26 13:37:55 | INFO | [RAM] depois: 221.5 MB
+2026-09-26 13:37:55 | INFO |   Distribuição por tamanho:
+2026-09-26 13:37:55 | INFO |     len=1:       14 itemsets | support 0.0507–0.8084
+2026-09-26 13:37:55 | INFO |     len=2:       65 itemsets | support 0.0527–0.6091
+2026-09-26 13:37:55 | INFO |     len=3:      101 itemsets | support 0.0500–0.2638
+2026-09-26 13:37:55 | INFO |     len=4:       54 itemsets | support 0.0501–0.1350
+2026-09-26 13:37:55 | INFO |     len=5:        8 itemsets | support 0.0505–0.0680
+2026-09-26 13:37:55 | INFO |   Top 10 itemsets (len>=2):
+2026-09-26 13:37:55 | INFO |     0.6091 | dairy eggs, produce
+2026-09-26 13:37:55 | INFO |     0.3434 | beverages, produce
+2026-09-26 13:37:55 | INFO |     0.3337 | produce, snacks
+2026-09-26 13:37:55 | INFO |     0.3207 | beverages, dairy eggs
+2026-09-26 13:37:55 | INFO |     0.3109 | dairy eggs, snacks
+2026-09-26 13:37:55 | INFO |     0.2994 | frozen, produce
+2026-09-26 13:37:55 | INFO |     0.2757 | dairy eggs, frozen
+2026-09-26 13:37:55 | INFO |     0.2676 | pantry, produce
+2026-09-26 13:37:55 | INFO |     0.2638 | dairy eggs, produce, snacks
+2026-09-26 13:37:55 | INFO |     0.2626 | beverages, dairy eggs, produce
+2026-09-26 13:37:55 | INFO |   salvo: itemsets_department_support0_05.parquet  (0.01 MB)
+2026-09-26 13:37:55 | INFO | ============================================================
+2026-09-26 13:37:55 | INFO | Resumo [department]:
+2026-09-26 13:37:55 | INFO |   min_support=0.2    | itemsets=      26 | len>=2=      17 | tempo=1.96s | max_len=3
+2026-09-26 13:37:55 | INFO |   min_support=0.1    | itemsets=      81 | len>=2=      68 | tempo=2.01s | max_len=4
+2026-09-26 13:37:55 | INFO |   min_support=0.05   | itemsets=     242 | len>=2=     228 | tempo=1.95s | max_len=5
+2026-09-26 13:37:57 | INFO | [RAM] fim: 221.7 MB
+2026-09-26 13:37:57 | INFO | STEP 05d concluído.

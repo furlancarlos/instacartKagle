@@ -1,0 +1,13 @@
+round,min_support,n_orders,algo,n_itemsets,time_s,ram_delta_mb
+round1_support_0_005,0.0050,5000,fpgrowth,413,0.2109,3.9805
+round1_support_0_005,0.0050,5000,apriori,413,0.4647,3.1836
+round1_support_0_005,0.0050,10000,fpgrowth,395,0.4938,5.7109
+round1_support_0_005,0.0050,10000,apriori,395,0.8479,0.2188
+round1_support_0_005,0.0050,20000,fpgrowth,379,1.2573,11.0977
+round1_support_0_005,0.0050,20000,apriori,379,1.6654,0.4648
+round1_support_0_005,0.0050,40000,fpgrowth,383,3.1774,24.1562
+round1_support_0_005,0.0050,40000,apriori,383,3.6872,0.0117
+round2_support_0_005,0.0050,80000,fpgrowth,381,7.5563,47.3516
+round2_support_0_005,0.0050,80000,apriori,381,12.2239,0.0000
+round2_support_0_005,0.0050,160000,fpgrowth,377,14.7075,107.3867
+round2_support_0_005,0.0050,160000,apriori,377,242.0426,0.0000

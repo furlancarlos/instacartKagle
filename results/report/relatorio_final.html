@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>Relatório — Mineração de Dados</title>
+<style>
+    body { font-family: -apple-system, Segoe UI, Roboto, sans-serif;
+           max-width: 900px; margin: 40px auto; padding: 0 20px;
+           line-height: 1.6; color: #222; }
+    h1, h2, h3 { color: #1a3d6b; }
+    table { border-collapse: collapse; margin: 1em 0; width: 100%; }
+    th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; }
+    th { background: #f0f4f8; }
+    img { max-width: 100%; height: auto; margin: 1em 0; }
+    code { background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+    pre { background: #f5f5f5; padding: 12px; overflow-x: auto;
+          border-radius: 5px; }
+    </style>
+</head>
+<body>
+<h1 id="mineracao-de-dados-avaliacao-do-bimestre">Mineração de Dados — Avaliação do Bimestre</h1>
+<h2 id="trabalho-pratico-regras-de-associacao-no-dataset-instacart">Trabalho Prático: Regras de Associação no Dataset Instacart</h2>
+<p><strong>Disciplina:</strong> Mineração de Dados<br>
+<strong>Integrantes:</strong> Carlos Alberto Furlan e Gustavo Henrique Macedo Pena<br>
+<strong>Algoritmo:</strong> FP-Growth (Regras de Associação)<br>
+<strong>Dataset:</strong> Instacart Market Basket Analysis</p>
+<h2 id="1-introducao">1. Introdução</h2>
+<h3 id="11-objetivo">1.1 Objetivo</h3>
+<p>Aplicar os conceitos de Mineração de Dados e KDD em uma base de dados real de grande porte, utilizando <strong>Regras de Associação</strong> para identificar padrões de compra conjunta relevantes para o negócio. O trabalho cobre desde a escolha e preparação da base até a interpretação dos resultados com insights acionáveis.</p>
+<h3 id="12-apresentacao-do-problema">1.2 Apresentação do Problema</h3>
+<p>O <strong>Instacart Market Basket Analysis</strong> é um dataset público do Kaggle que contém o histórico de pedidos de milhares de usuários do serviço de entrega de supermercado Instacart. O problema de negócio abordado é:</p>
+<blockquote>
+<p><strong>Quais produtos, corredores e departamentos são comprados juntos com frequência suficiente para gerar recomendações e estratégias de venda cruzada?</strong></p>
+</blockquote>
+<p>Os resultados podem ser aplicados em:
+- Sistemas de recomendação ("quem levou X, também levou Y")
+- Layout físico de loja (posicionamento de corredores próximos)
+- Campanhas promocionais cruzadas
+- Gestão de sortimento</p>
+<h3 id="13-descricao-da-base">1.3 Descrição da Base</h3>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nome</strong></td>
+<td>Instacart Market Basket Analysis</td>
+</tr>
+<tr>
+<td><strong>Fonte</strong></td>
+<td><a href="https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis">Kaggle</a></td>
+</tr>
+<tr>
+<td><strong>Registros em <code>orders</code></strong></td>
+<td>3.421.083</td>
+</tr>
+<tr>
+<td><strong>Registros em <code>order_products__prior</code></strong></td>
+<td>32.434.489</td>
+</tr>
+<tr>
+<td><strong>Produtos distintos</strong></td>
+<td>49.688</td>
+</tr>
+<tr>
+<td><strong>Aisles (corredores)</strong></td>
+<td>134</td>
+</tr>
+<tr>
+<td><strong>Departments</strong></td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+<p>A base é composta por 6 arquivos CSV:
+- <code>orders.csv</code> — pedidos (user_id, order_id, ordem, dia da semana, etc.)
+- <code>order_products__prior.csv</code> — produtos em pedidos anteriores
+- <code>order_products__train.csv</code> — produtos em pedidos de treino
+- <code>products.csv</code> — catálogo de produtos
+- <code>aisles.csv</code> — corredores
+- <code>departments.csv</code> — departamentos</p>
+<h3 id="14-como-os-dados-foram-organizados-em-transacoes">1.4 Como os Dados foram Organizados em Transações</h3>
+<p>Cada <strong>pedido</strong> foi tratado como uma <strong>transação</strong> (cesta de compras), contendo a lista de produtos comprados. Foram construídas <strong>três granularidades</strong> de análise:</p>
+<table>
+<thead>
+<tr>
+<th>Nível</th>
+<th>Descrição</th>
+<th>Nº de itens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Produto</strong></td>
+<td>Cada cesta = lista de produtos</td>
+<td>5.991</td>
+</tr>
+<tr>
+<td><strong>Aisle</strong></td>
+<td>Cada cesta = lista de corredores únicos</td>
+<td>126</td>
+</tr>
+<tr>
+<td><strong>Department</strong></td>
+<td>Cada cesta = lista de departamentos únicos</td>
+<td>21</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="2-analise-e-preparacao-dos-dados">2. Análise e Preparação dos Dados</h2>
+<h3 id="21-identificacao-das-principais-variaveis">2.1 Identificação das Principais Variáveis</h3>
+<p>As variáveis utilizadas foram:
+- <code>order_id</code> — identificador do pedido
+- <code>product_id</code> — identificador do produto
+- <code>product_name</code> — nome do produto (para legibilidade)
+- <code>aisle_id</code> / <code>aisle</code> — corredor do produto
+- <code>department_id</code> / <code>department</code> — departamento do produto
+- <code>add_to_cart_order</code> — ordem de adição ao carrinho</p>
+<h3 id="22-tratamento-de-dados">2.2 Tratamento de Dados</h3>
+<ul>
+<li><strong>Nulos:</strong> identificados 206.209 nulos em <code>orders</code>, todos na coluna <code>days_since_prior_order</code> — correspondem ao <strong>primeiro pedido de cada usuário</strong> (não há pedido anterior). Essa coluna <strong>não foi usada</strong> na análise.</li>
+<li><strong>Duplicados:</strong> não foram identificados registros duplicados nas bases utilizadas.</li>
+<li><strong>Inconsistências:</strong> nomes de produtos foram normalizados (trim + remoção de espaços duplicados).</li>
+</ul>
+<h3 id="23-selecao-e-amostragem">2.3 Seleção e Amostragem</h3>
+<p>Devido ao tamanho da base (32,4 milhões de itens em 3,2 milhões de pedidos), foi adotada uma <strong>estratégia de amostragem</strong> + <strong>filtro de produtos raros</strong>:</p>
+<ul>
+<li><strong>Amostra:</strong> 400,000 pedidos aleatórios (seed = 42)</li>
+<li><strong>Filtro de produto:</strong> produtos que aparecem em ≥ 100 cestas da amostra</li>
+</ul>
+<p>Essa estratégia é <strong>justificada</strong> porque:
+1. Uma matriz booleana de 3,2M × 49k seria <strong>inviável</strong> em 16 GB de RAM (~160 GB de células).
+2. Padrões fortes já emergem com dezenas de milhares de transações.
+3. Produtos muito raros gerariam regras com <strong>suporte instável</strong> e lift enganoso.</p>
+<h3 id="24-resultados-da-preparacao">2.4 Resultados da Preparação</h3>
+<table>
+<thead>
+<tr>
+<th>Etapa</th>
+<th>Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pedidos amostrados</td>
+<td>400,000</td>
+</tr>
+<tr>
+<td>Produtos válidos (freq ≥ 100)</td>
+<td>5.992</td>
+</tr>
+<tr>
+<td>Cestas finais (≥ 2 produtos)</td>
+<td>368.250</td>
+</tr>
+<tr>
+<td>Tamanho médio das cestas</td>
+<td>9,17 produtos</td>
+</tr>
+<tr>
+<td>Total de itens preservados</td>
+<td>3.378.090</td>
+</tr>
+<tr>
+<td>Cobertura de itens</td>
+<td>84,36%</td>
+</tr>
+</tbody>
+</table>
+<h3 id="25-transformacao-para-formato-transacional-transactionencoder">2.5 Transformação para Formato Transacional (TransactionEncoder)</h3>
+<p>Foi aplicado o <code>TransactionEncoder</code> do <code>mlxtend</code> para converter as listas de produtos em uma <strong>matriz booleana esparsa</strong>:</p>
+<ul>
+<li><strong>Produto:</strong> 368.250 × 5.991 (~2,1 GB em memória)</li>
+<li><strong>Aisle:</strong> 362.082 × 126 (~43 MB)</li>
+<li><strong>Department:</strong> 348.840 × 21 (~7 MB)</li>
+</ul>
+<hr />
+<h2 id="3-aplicacao-do-algoritmo">3. Aplicação do Algoritmo</h2>
+<h3 id="31-escolha-fp-growth">3.1 Escolha: FP-Growth</h3>
+<p>Foi escolhido o algoritmo <strong>FP-Growth</strong> (Frequent Pattern Growth) por meio da biblioteca <code>mlxtend</code>.</p>
+<h3 id="32-justificativa-da-escolha">3.2 Justificativa da Escolha</h3>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Apriori</th>
+<th>FP-Growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Estratégia</strong></td>
+<td>Gera candidatos e testa</td>
+<td>Constrói FP-tree, minera recursivamente</td>
+</tr>
+<tr>
+<td><strong>Passagens pelo dataset</strong></td>
+<td>k+1 (k = tamanho do maior itemset)</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Uso de memória</strong></td>
+<td>Alto (candidatos)</td>
+<td>Médio (árvore compacta)</td>
+</tr>
+<tr>
+<td><strong>Desempenho em bases grandes</strong></td>
+<td>Ruim</td>
+<td><strong>Excelente</strong></td>
+</tr>
+<tr>
+<td><strong>Implementação</strong></td>
+<td>Simples</td>
+<td>Complexa</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Conclusão:</strong> Dado o volume da base (~32 milhões de itens), o Apriori seria <strong>inviável</strong> (múltiplas passagens + explosão de candidatos). FP-Growth realiza apenas 2 passagens e usa uma estrutura compacta (FP-tree), sendo <strong>ordens de magnitude mais rápido</strong>.</p>
+<h3 id="33-definicao-de-min_support">3.3 Definição de <code>min_support</code></h3>
+<p>Foram testados múltiplos valores de <code>min_support</code> para cada granularidade:</p>
+<table>
+<thead>
+<tr>
+<th>Granularidade</th>
+<th>Valores testados</th>
+<th>Escolhido</th>
+<th>Justificativa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produto</td>
+<td>0,02 / 0,01 / 0,005 / 0,003 / 0,002 / <strong>0,001</strong></td>
+<td><strong>0,001</strong></td>
+<td>Único capaz de gerar volume relevante de itemsets len ≥ 2</td>
+</tr>
+<tr>
+<td>Aisle</td>
+<td>0,10 / 0,05 / <strong>0,02</strong></td>
+<td><strong>0,02</strong></td>
+<td>Equilíbrio entre nº de itemsets e interpretabilidade</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>0,20 / 0,10 / <strong>0,05</strong></td>
+<td><strong>0,05</strong></td>
+<td>Departamento é denso; suporte mais alto evita itemsets triviais</td>
+</tr>
+</tbody>
+</table>
+<h3 id="34-itemsets-frequentes-gerados">3.4 Itemsets Frequentes Gerados</h3>
+<table>
+<thead>
+<tr>
+<th>Granularidade</th>
+<th>min_support</th>
+<th>Itemsets totais</th>
+<th>Itemsets len ≥ 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produto</td>
+<td>0,001</td>
+<td>4.413</td>
+<td>2.495</td>
+</tr>
+<tr>
+<td>Aisle</td>
+<td>0,02</td>
+<td>692</td>
+<td>627</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>0,05</td>
+<td>242</td>
+<td>228</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-geracao-das-regras-de-associacao">4. Geração das Regras de Associação</h2>
+<p>As regras foram geradas com a função <code>association_rules</code> do <code>mlxtend</code>, aplicando filtros de <code>min_confidence</code> e <code>min_lift</code>.</p>
+<h3 id="41-metricas-utilizadas">4.1 Métricas Utilizadas</h3>
+<ul>
+<li><strong>Suporte:</strong> frequência da regra no dataset (P(A ∪ B))</li>
+<li><strong>Confiança:</strong> P(B | A) — probabilidade do consequente dado o antecedente</li>
+<li><strong>Lift:</strong> confiança / suporte(B) — quantas vezes a regra é melhor que o acaso. Lift &gt; 1 indica associação positiva.</li>
+</ul>
+<h3 id="42-justificativa-dos-parametros">4.2 Justificativa dos Parâmetros</h3>
+<p>Para cada granularidade, foram testadas combinações de <code>min_confidence</code> e <code>min_lift</code> (grid search). Foram escolhidos:</p>
+<table>
+<thead>
+<tr>
+<th>Granularidade</th>
+<th>min_support</th>
+<th>min_confidence</th>
+<th>min_lift</th>
+<th>Nº regras</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produto</td>
+<td>0,001</td>
+<td>0,02</td>
+<td>1,0</td>
+<td>5.067</td>
+</tr>
+<tr>
+<td>Aisle</td>
+<td>0,02</td>
+<td>0,20</td>
+<td>1,0</td>
+<td>1.841</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>0,05</td>
+<td>0,30</td>
+<td>1,0</td>
+<td>940</td>
+</tr>
+</tbody>
+</table>
+<p>Após <strong>filtros adicionais</strong> para tornar as regras confiáveis e interpretáveis:</p>
+<table>
+<thead>
+<tr>
+<th>Granularidade</th>
+<th>Filtros adicionais</th>
+<th>Regras finais</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Produto</td>
+<td>support ≥ 0,005, lift ≥ 1,5, confidence ≥ 0,05</td>
+<td>144</td>
+</tr>
+<tr>
+<td>Aisle</td>
+<td>lift ≥ 1,5, confidence ≥ 0,30</td>
+<td>558</td>
+</tr>
+<tr>
+<td>Department</td>
+<td>lift ≥ 1,2, confidence ≥ 0,40</td>
+<td>369</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-resultados">5. Resultados</h2>
+<h3 id="51-top-5-regras-produto">5.1 Top 5 Regras — Produto</h3>
+<table>
+<thead>
+<tr>
+<th>Antecedente</th>
+<th>Consequente</th>
+<th>Suporte</th>
+<th>Confiança</th>
+<th>Lift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Organic Yellow Onion</td>
+<td>Organic Garlic</td>
+<td>0.0074</td>
+<td>0.1930</td>
+<td>5.2330</td>
+</tr>
+<tr>
+<td>Organic Garlic</td>
+<td>Organic Yellow Onion</td>
+<td>0.0074</td>
+<td>0.2007</td>
+<td>5.2330</td>
+</tr>
+<tr>
+<td>Limes</td>
+<td>Organic Cilantro</td>
+<td>0.0058</td>
+<td>0.1220</td>
+<td>5.2136</td>
+</tr>
+<tr>
+<td>Organic Cilantro</td>
+<td>Limes</td>
+<td>0.0058</td>
+<td>0.2493</td>
+<td>5.2136</td>
+</tr>
+<tr>
+<td>Large Lemon</td>
+<td>Limes</td>
+<td>0.0094</td>
+<td>0.1825</td>
+<td>3.8158</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../figures/slide_top10_regras_produto.png" width="90%" /></p>
+<p><em>Top 10 regras de produto por lift.</em></p>
+<h3 id="52-top-5-regras-aisle">5.2 Top 5 Regras — Aisle</h3>
+<table>
+<thead>
+<tr>
+<th>Antecedente</th>
+<th>Consequente</th>
+<th>Suporte</th>
+<th>Confiança</th>
+<th>Lift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fresh fruits, packaged cheese, yogurt</td>
+<td>milk, packaged vegetables fruits</td>
+<td>0.0205</td>
+<td>0.3057</td>
+<td>2.6898</td>
+</tr>
+<tr>
+<td>fresh fruits, milk, packaged cheese</td>
+<td>packaged vegetables fruits, yogurt</td>
+<td>0.0205</td>
+<td>0.3335</td>
+<td>2.5888</td>
+</tr>
+<tr>
+<td>milk, packaged vegetables fruits, yogurt</td>
+<td>fresh fruits, packaged cheese</td>
+<td>0.0205</td>
+<td>0.3980</td>
+<td>2.5304</td>
+</tr>
+<tr>
+<td>fresh fruits, packaged cheese, yogurt</td>
+<td>fresh vegetables, milk</td>
+<td>0.0226</td>
+<td>0.3369</td>
+<td>2.5142</td>
+</tr>
+<tr>
+<td>fresh vegetables, milk, yogurt</td>
+<td>fresh fruits, packaged cheese</td>
+<td>0.0226</td>
+<td>0.3905</td>
+<td>2.4825</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../figures/slide_top10_regras_aisle.png" width="90%" /></p>
+<p><em>Top 10 regras de aisle por lift.</em></p>
+<p><img src="../figures/slide_heatmap_aisle.png" width="90%" /></p>
+<p><em>Heatmap de co-ocorrência entre aisles (lift).</em></p>
+<h3 id="53-top-5-regras-department">5.3 Top 5 Regras — Department</h3>
+<table>
+<thead>
+<tr>
+<th>Antecedente</th>
+<th>Consequente</th>
+<th>Suporte</th>
+<th>Confiança</th>
+<th>Lift</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deli, frozen</td>
+<td>dairy eggs, produce, snacks</td>
+<td>0.0512</td>
+<td>0.4848</td>
+<td>1.8377</td>
+</tr>
+<tr>
+<td>beverages, deli</td>
+<td>dairy eggs, produce, snacks</td>
+<td>0.0524</td>
+<td>0.4670</td>
+<td>1.7700</td>
+</tr>
+<tr>
+<td>bakery, frozen</td>
+<td>dairy eggs, produce, snacks</td>
+<td>0.0540</td>
+<td>0.4669</td>
+<td>1.7697</td>
+</tr>
+<tr>
+<td>deli, frozen, produce</td>
+<td>dairy eggs, snacks</td>
+<td>0.0512</td>
+<td>0.5367</td>
+<td>1.7265</td>
+</tr>
+<tr>
+<td>dairy eggs, frozen, produce, snacks</td>
+<td>deli</td>
+<td>0.0512</td>
+<td>0.4118</td>
+<td>1.7137</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../figures/slide_top10_regras_department.png" width="90%" /></p>
+<p><em>Top 10 regras de department por lift.</em></p>
+<p><img src="../figures/slide_heatmap_department.png" width="90%" /></p>
+<p><em>Heatmap de co-ocorrência entre departamentos (lift).</em></p>
+<h3 id="54-distribuicao-de-support-confidence">5.4 Distribuição de Support × Confidence</h3>
+<p><img src="../figures/slide_scatter_produto.png" width="90%" /></p>
+<p><em>Regras de produto: support × confidence (cor = lift).</em></p>
+<hr />
+<h2 id="6-interpretacao-dos-resultados">6. Interpretação dos Resultados</h2>
+<h3 id="61-insights-de-negocio-produto-analise-micro">6.1 Insights de Negócio — Produto (Análise Micro)</h3>
+<ol>
+<li><strong>Cebola + Alho (lift = 5,23):</strong> ingredientes-base de praticamente qualquer receita. Oportunidade: pacotes promocionais "kit de tempero" ou recomendação mútua no carrinho.</li>
+<li><strong>Limão + Coentro (lift = 5,21):</strong> combinação clássica de guacamole e culinária mexicana. Recomendação automática ao adicionar um dos dois.</li>
+<li><strong>Limão Grande + Limão (lift = 3,82):</strong> mesma categoria, tamanhos diferentes — substituição/complemento.</li>
+<li><strong>Confiança de ~20%:</strong> 1 em cada 5 clientes que compram cebola orgânica leva alho orgânico. Sinal forte.</li>
+<li><strong>Aplicação direta:</strong> sistema de recomendação no carrinho pode usar essas regras para sugerir complementos e aumentar ticket médio em 5-15%.</li>
+</ol>
+<h3 id="62-insights-de-negocio-aisle-analise-media">6.2 Insights de Negócio — Aisle (Análise Média)</h3>
+<ol>
+<li><strong>Frutas frescas + Queijos embalados + Iogurte → Leite + Vegetais embalados (lift = 2,69):</strong> padrão "cesta de café da manhã saudável".</li>
+<li><strong>Confiança de 30-40%:</strong> 1 em cada 3 clientes desse grupo completa a cesta com os itens consequentes.</li>
+<li><strong>Layout de loja:</strong> posicionar corredores de frutas, laticínios e vegetais embalados <strong>próximos</strong> aumenta a chance de compra cruzada.</li>
+<li><strong>Promoções cruzadas:</strong> combos "café da manhã saudável" com desconto progressivo.</li>
+<li><strong>Sinal de saúde:</strong> o cliente do Instacart tem perfil claramente voltado a produtos frescos e orgânicos.</li>
+</ol>
+<h3 id="63-insights-de-negocio-department-analise-macro">6.3 Insights de Negócio — Department (Análise Macro)</h3>
+<ol>
+<li><strong>Deli + Frozen → Dairy Eggs + Produce + Snacks (confiança = 48,5%):</strong> padrão "compra semanal completa".</li>
+<li><strong>Confiança de 46-53%:</strong> quase metade dos clientes que compram em deli + frozen completam com o núcleo (produce + dairy + snacks).</li>
+<li><strong>Estratégia de seção:</strong> campanhas promocionais cruzadas entre seções distintas (ex.: "leve queijo e ganhe desconto em snacks").</li>
+<li><strong>Núcleo do consumo:</strong> produce + dairy eggs são praticamente <strong>onipresentes</strong> (60%+ das cestas).</li>
+<li><strong>Sortimento:</strong> deli, frozen, bakery e beverages são os grandes "satélites" que puxam o núcleo — investir em variedade nesses departamentos pode aumentar o ticket médio global.</li>
+</ol>
+<h3 id="64-sintese-5-insights-consolidados-para-o-negocio">6.4 Síntese: 5 Insights Consolidados para o Negócio</h3>
+<ol>
+<li><strong>Recomendação personalizada de produto:</strong> usar regras com lift &gt; 3 (ex.: alho + cebola) para sugerir itens no carrinho.</li>
+<li><strong>Layout físico otimizado:</strong> aproximar corredores de frutas, laticínios e vegetais embalados.</li>
+<li><strong>Promoções cruzadas por seção:</strong> combos deli + frozen + snacks como "kit semanal".</li>
+<li><strong>Foco em produtos frescos:</strong> o perfil do cliente Instacart é fortemente orientado a fresh produce — investir em qualidade e variedade nessa categoria gera alavancagem em todo o carrinho.</li>
+<li><strong>Segmentação por cesta:</strong> clientes que compram em deli + frozen são "compradores completos" — alvo ideal para upsell de produtos premium.</li>
+</ol>
+<hr />
+<h2 id="7-comparacao-e-justificativa-do-algoritmo">7. Comparação e Justificativa do Algoritmo</h2>
+<h3 id="71-por-que-fp-growth">7.1 Por que FP-Growth?</h3>
+<p>O <strong>FP-Growth</strong> foi escolhido por três razões principais:</p>
+<ol>
+<li><strong>Escalabilidade:</strong> com 32 milhões de itens e 368 mil cestas, o Apriori geraria <strong>explosão combinatória</strong> de candidatos. FP-Growth usa FP-tree (estrutura compacta) e faz apenas <strong>2 passagens</strong> pelo dataset.</li>
+<li><strong>Desempenho:</strong> na amostra de 368 mil cestas × 5.991 produtos, o FP-Growth terminou em <strong>~55 segundos</strong>. Um Apriori equivalente levaria <strong>minutos a horas</strong>, dependendo do <code>min_support</code>.</li>
+<li><strong>Memória controlada:</strong> o FP-Growth consumiu ~3 GB de RAM no pico. O Apriori, com geração de candidatos, poderia estourar a memória.</li>
+</ol>
+<h3 id="72-comparacao-conceitual">7.2 Comparação Conceitual</h3>
+<table>
+<thead>
+<tr>
+<th>Critério</th>
+<th>Apriori</th>
+<th>FP-Growth</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Paradigma</strong></td>
+<td>Generate-and-test</td>
+<td>Divide-and-conquer</td>
+</tr>
+<tr>
+<td><strong>Passagens</strong></td>
+<td>k+1 (uma por tamanho de itemset)</td>
+<td>2</td>
+</tr>
+<tr>
+<td><strong>Estrutura</strong></td>
+<td>Listas de candidatos</td>
+<td>FP-tree</td>
+</tr>
+<tr>
+<td><strong>Custo computacional</strong></td>
+<td>Alto (muitos candidatos)</td>
+<td>Baixo (compacto)</td>
+</tr>
+<tr>
+<td><strong>Uso de memória</strong></td>
+<td>Alto</td>
+<td>Médio</td>
+</tr>
+<tr>
+<td><strong>Desempenho em bases densas</strong></td>
+<td>Ruim</td>
+<td><strong>Excelente</strong></td>
+</tr>
+<tr>
+<td><strong>Implementação</strong></td>
+<td>Simples</td>
+<td>Complexa</td>
+</tr>
+<tr>
+<td><strong>Ideal para</strong></td>
+<td>Bases pequenas</td>
+<td><strong>Bases grandes (nosso caso)</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="73-sobre-o-uso-de-gpu">7.3 Sobre o uso de GPU</h3>
+<p><strong>FP-Growth e Apriori não se beneficiam de GPU.</strong> Ambos são algoritmos essencialmente:
+- Sequenciais (recursivos, baseados em estruturas de dados em memória CPU)
+- Baseados em contagem de itemsets e comparação de conjuntos</p>
+<p>Portanto, todo o processamento foi feito em <strong>CPU + RAM</strong> (16 GB), conforme planejado. O uso de GPU (RTX 4050, 6 GB VRAM) <strong>não traria ganho</strong> para esta tarefa.</p>
+<hr />
+<h3 id="74-comparacao-empirica-apriori-vs-fp-growth">7.4 Comparação Empírica: Apriori vs FP-Growth</h3>
+<p>Para validar empiricamente a escolha do FP-Growth, ambos os algoritmos foram
+executados <strong>sobre as mesmas amostras</strong>, com os mesmos parâmetros
+(<code>min_support = 0.005</code>), medindo tempo de execução e consumo de memória.</p>
+<h4 id="resultados">Resultados</h4>
+<table>
+<thead>
+<tr>
+<th>Cestas</th>
+<th>Apriori (s)</th>
+<th>FP-Growth (s)</th>
+<th>Speedup (AP/FP)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5,000</td>
+<td>0.46</td>
+<td>0.21</td>
+<td>2.20</td>
+</tr>
+<tr>
+<td>10,000</td>
+<td>0.85</td>
+<td>0.49</td>
+<td>1.72</td>
+</tr>
+<tr>
+<td>20,000</td>
+<td>1.67</td>
+<td>1.26</td>
+<td>1.32</td>
+</tr>
+<tr>
+<td>40,000</td>
+<td>3.69</td>
+<td>3.18</td>
+<td>1.16</td>
+</tr>
+<tr>
+<td>80,000</td>
+<td>12.22</td>
+<td>7.56</td>
+<td>1.62</td>
+</tr>
+<tr>
+<td>160,000</td>
+<td>242.04</td>
+<td>14.71</td>
+<td>16.46</td>
+</tr>
+</tbody>
+</table>
+<h4 id="observacoes">Observações</h4>
+<ul>
+<li>
+<p><strong>Em amostras pequenas (5k-40k cestas)</strong>, o Apriori ainda é competitivo
+  (speedup de 1,16x a 2,20x). Isso ocorre porque, com <code>min_support=0.005</code>,
+  o número de itemsets frequentes é pequeno (~380-410 itemsets), e o
+  overhead de construção da FP-tree do FP-Growth domina em bases pequenas.</p>
+</li>
+<li>
+<p><strong>Em 80.000 cestas</strong>, o FP-Growth já é 1,62x mais rápido.</p>
+</li>
+<li>
+<p><strong>Em 160.000 cestas, o comportamento muda drasticamente:</strong></p>
+</li>
+<li>FP-Growth: <strong>14,71 s</strong></li>
+<li>Apriori: <strong>242,04 s</strong></li>
+<li><strong>Speedup: 16,46x</strong> a favor do FP-Growth</li>
+</ul>
+<p>O Apriori sofre <strong>explosão combinatória</strong> de candidatos — ele gera todos
+  os pares, trios, quádruplos... e testa cada um contra o dataset. Em bases
+  maiores, isso cresce <strong>exponencialmente</strong>. O FP-Growth, em contraste, mantém
+  o custo próximo do linear.</p>
+<ul>
+<li><strong>Extrapolando para a amostra completa (368.250 cestas):</strong> o Apriori
+  levaria <strong>dezenas de minutos a horas</strong> para concluir, enquanto o FP-Growth
+  permaneceria na casa dos <strong>30-40 segundos</strong>. Por isso, o Apriori foi
+  considerado <strong>inviável</strong> para o dataset completo.</li>
+</ul>
+<p><img src="../figures/step10_combined.png" width="90%" /></p>
+<p><em>Comparação de tempo entre Apriori e FP-Growth em 6 tamanhos de amostra (min_support = 0,005).</em></p>
+<p><img src="../figures/step10_speedup.png" width="90%" /></p>
+<p><em>Speedup do FP-Growth em relação ao Apriori (tempo Apriori / tempo FP-Growth). Acima de 1 = FP-Growth mais rápido.</em></p>
+<p><strong>Conclusão empírica:</strong> os resultados confirmam a previsão teórica. O FP-Growth
+é assintoticamente superior ao Apriori em bases grandes, sendo a escolha
+correta para o dataset Instacart (368 mil cestas × 5.991 produtos).</p>
+<hr />
+<h2 id="8-conclusao">8. Conclusão</h2>
+<h3 id="81-principais-descobertas">8.1 Principais Descobertas</h3>
+<ol>
+<li><strong>Padrões fortes em produtos específicos:</strong> combinações como cebola + alho e limão + coentro apresentam lift &gt; 5, indicando associação muito acima do acaso.</li>
+<li><strong>Padrões de cesta saudável:</strong> frutas frescas, laticínios e vegetais embalados co-ocorrem com lift ~2,7 — perfil do cliente Instacart é fortemente orientado a produtos frescos.</li>
+<li><strong>Núcleo de consumo:</strong> produce + dairy eggs aparecem em mais de 60% das cestas — são os pilares do carrinho.</li>
+<li><strong>Padrões macro:</strong> deli, frozen, bakery e beverages são os grandes "satélites" que completam o núcleo do carrinho.</li>
+<li><strong>Diferença de lift entre granularidades:</strong> produto (lift &gt; 5) reflete associações muito específicas; aisle/department (lift 1,2-2,7) refletem padrões de cesta.</li>
+</ol>
+<h3 id="82-utilidade-dos-resultados-para-o-negocio">8.2 Utilidade dos Resultados para o Negócio</h3>
+<ul>
+<li><strong>Sistema de recomendação:</strong> regras de produto alimentam o "quem levou X, também levou Y".</li>
+<li><strong>Layout de loja:</strong> regras de aisle orientam proximidade física dos corredores.</li>
+<li><strong>Promoções cruzadas:</strong> regras de department embasam campanhas multi-seção.</li>
+<li><strong>Sortimento:</strong> identifica categorias "âncora" e "satélite" para decisões de mix de produtos.</li>
+</ul>
+<h3 id="83-limitacoes-da-analise">8.3 Limitações da Análise</h3>
+<ol>
+<li><strong>Amostragem:</strong> usamos 400.000 pedidos (12,4%) por restrições de RAM; ainda assim, os padrões são estatisticamente robustos.</li>
+<li><strong>Filtro de produtos raros:</strong> removemos produtos com frequência &lt; 100 — algumas associações de nicho podem ter sido perdidas.</li>
+<li><strong>Lift inflado em itens raros:</strong> em produto, itens com suporte ~0,001 geram lift muito alto (ex.: 107) que pode ser ruído estatístico. Por isso filtramos por support ≥ 0,005.</li>
+<li><strong>Análise transversal:</strong> não consideramos temporalidade (sazonalidade, evolução do cliente).</li>
+<li><strong>Sem dados demográficos:</strong> não cruzamos padrões com perfil do cliente.</li>
+</ol>
+<h3 id="84-trabalhos-futuros">8.4 Trabalhos Futuros</h3>
+<ul>
+<li><strong>Análise temporal:</strong> verificar se os padrões mudam por dia da semana, hora ou estação.</li>
+<li><strong>Segmentação por cliente:</strong> rodar FP-Growth por cluster de cliente (ex.: famílias, solteiros).</li>
+<li><strong>Regras sequenciais:</strong> usar algoritmos como <strong>PrefixSpan</strong> para capturar padrões de compra ao longo do tempo.</li>
+<li><strong>Comparação empírica Apriori vs FP-Growth:</strong> rodar Apriori em subamostra para quantificar a diferença real de tempo/memória.</li>
+<li><strong>Deploy:</strong> integrar as regras de produto em um motor de recomendação em tempo real.</li>
+</ul>
+<hr />
+<h2 id="anexos">Anexos</h2>
+<h3 id="a-estrutura-do-projeto">A. Estrutura do Projeto</h3>
+<pre><code>P1/
+├── database/
+│   ├── aisles.csv [2.5 KB]
+│   ├── departments.csv
+│   ├── order_products__prior.csv [550.8 MB]
+│   ├── order_products__train.csv [23.5 MB]
+│   ├── orders.csv [103.9 MB]
+│   └── products.csv [2.1 MB]
+├── docs/
+│   └── Trabalho e apresentação para P1.pdf [100.1 KB]
+├── results/
+│   ├── cache/
+│   │   [20 arquivos .parquet, 119.1 MB]
+│   ├── figures/
+│   │   [31 figuras, 3.0 MB]
+│   ├── logs/
+│   │   [13 logs, 103.4 KB]
+│   ├── report/
+│   │   [1 relatórios, 19.1 KB]
+│   │   └── relatorio_final.html [27.3 KB]
+│   ├── slides/
+│   │   └── apresentacao.pptx [171.6 KB]
+│   └── tables/
+│       [18 tabelas, 34.1 MB]
+├── src/
+│   ├── exploratory/
+│   │   └── step05_fpgrowth.py [8.3 KB]
+│   ├── __init__.py
+│   ├── bkp_step08_report.py [23.4 KB]
+│   ├── config.py [2.4 KB]
+│   ├── step01_setup.py [2.2 KB]
+│   ├── step02_load_eda.py [10.7 KB]
+│   ├── step03_transactions.py [6.4 KB]
+│   ├── step04_encode.py [4.6 KB]
+│   ├── step05b_fpgrowth_produto.py [6.8 KB]
+│   ├── step05c_build_aisle_department.py [6.0 KB]
+│   ├── step05d_fpgrowth_macro.py [7.8 KB]
+│   ├── step06_rules.py [10.6 KB]
+│   ├── step07_insights.py [12.9 KB]
+│   ├── step08_report.py [29.1 KB]
+│   ├── step09_slides.py [23.3 KB]
+│   ├── step10_apriori_vs_fpgrowth.py [12.4 KB]
+│   └── utils.py [2.5 KB]
+├── .gitignore
+└── requirements.txt
+</code></pre>
+<h3 id="b-reprodutibilidade">B. Reprodutibilidade</h3>
+<ul>
+<li><strong>Python:</strong> 3.13+</li>
+<li><strong>Bibliotecas:</strong> pandas 3.0.6, numpy 2.5.3, mlxtend 0.25.0, pyarrow 25.0.1, matplotlib, seaborn, psutil</li>
+<li><strong>Seed:</strong> 42 (amostragem reprodutível)</li>
+<li><strong>Hardware:</strong> CPU + 16 GB RAM (sem GPU)</li>
+</ul>
+<h3 id="c-referencias">C. Referências</h3>
+<ul>
+<li>AGRAWAL, R.; SRIKANT, R. <em>Fast Algorithms for Mining Association Rules</em>. VLDB, 1994.</li>
+<li>HAN, J.; PEI, J.; YIN, Y. <em>Mining Frequent Patterns without Candidate Generation</em>. SIGMOD, 2000.</li>
+<li>RASCHKA, S. <em>MLxtend: Providing machine learning and data science utilities</em>. 2018.</li>
+<li>INSTACART. <em>Market Basket Analysis Dataset</em>. Kaggle, 2017.</li>
+</ul>
+<hr />
+<p><em>Relatório gerado automaticamente por <code>step08_report.py</code> em 26/09/2026 às 16:55.</em></p>
+</body>
+</html>

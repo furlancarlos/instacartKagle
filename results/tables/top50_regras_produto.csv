@@ -1,0 +1,51 @@
+antecedents,consequents,support,confidence,lift
+frozenset({'Raspberry Yoghurt'}),frozenset({'Blueberry Yoghurt'}),0.0010210454854039375,0.3661148977604674,107.5134059810942
+frozenset({'Blueberry Yoghurt'}),frozenset({'Raspberry Yoghurt'}),0.0010210454854039375,0.29984051036682613,107.51340598109418
+"frozenset({'Vanilla Skyr Nonfat Yogurt', 'Non Fat Raspberry Yogurt'})",frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),0.0010482009504412762,0.6136724960254372,94.9915496685024
+frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),"frozenset({'Vanilla Skyr Nonfat Yogurt', 'Non Fat Raspberry Yogurt'})",0.0010482009504412762,0.16225304749894912,94.9915496685024
+frozenset({'Kiwi Sandia Sparkling Water'}),frozenset({'Blackberry Cucumber Sparkling Water'}),0.0010807875084860828,0.34912280701754383,88.60404802495556
+frozenset({'Blackberry Cucumber Sparkling Water'}),frozenset({'Kiwi Sandia Sparkling Water'}),0.0010807875084860828,0.27429359062715364,88.60404802495555
+frozenset({'Blueberry Yoghurt'}),frozenset({'Strawberry Rhubarb Yoghurt'}),0.0010237610319076714,0.30063795853269537,85.16148325358851
+frozenset({'Strawberry Rhubarb Yoghurt'}),frozenset({'Blueberry Yoghurt'}),0.0010237610319076714,0.29,85.16148325358851
+frozenset({'Non Fat Raspberry Yogurt'}),"frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt', 'Vanilla Skyr Nonfat Yogurt'})",0.0010482009504412762,0.19033530571992108,81.50113526902435
+"frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt', 'Vanilla Skyr Nonfat Yogurt'})",frozenset({'Non Fat Raspberry Yogurt'}),0.0010482009504412762,0.4488372093023255,81.50113526902433
+frozenset({'Total 0% Raspberry Yogurt'}),frozenset({'Fat Free Strawberry Yogurt'}),0.0010482009504412762,0.2495151906916613,76.50621896103604
+frozenset({'Fat Free Strawberry Yogurt'}),frozenset({'Total 0% Raspberry Yogurt'}),0.0010482009504412762,0.32139883430474603,76.50621896103603
+frozenset({'Grapefruit Sparkling Water'}),frozenset({'Lemon Sparkling Water'}),0.0010807875084860828,0.22334455667788997,73.10811821922931
+frozenset({'Lemon Sparkling Water'}),frozenset({'Grapefruit Sparkling Water'}),0.0010807875084860828,0.35377777777777775,73.10811821922931
+frozenset({'Non Fat Acai & Mixed Berries Yogurt'}),frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),0.0012600135777325187,0.4526829268292683,70.07166364223541
+frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),frozenset({'Non Fat Acai & Mixed Berries Yogurt'}),0.0012600135777325187,0.19503993274485074,70.07166364223541
+frozenset({'Non Fat Raspberry Yogurt'}),frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),0.002487440597420231,0.45167652859960555,69.91588131853919
+frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),frozenset({'Non Fat Raspberry Yogurt'}),0.002487440597420231,0.3850357292980244,69.91588131853918
+"frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt', 'Non Fat Raspberry Yogurt'})",frozenset({'Vanilla Skyr Nonfat Yogurt'}),0.0010482009504412762,0.4213973799126637,67.94202502313415
+frozenset({'Vanilla Skyr Nonfat Yogurt'}),"frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt', 'Non Fat Raspberry Yogurt'})",0.0010482009504412762,0.1690017513134851,67.94202502313415
+frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),frozenset({'Nonfat Icelandic Style Strawberry Yogurt'}),0.0014908350305498981,0.23076923076923075,65.62221562221562
+frozenset({'Nonfat Icelandic Style Strawberry Yogurt'}),frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),0.0014908350305498981,0.42393822393822395,65.62221562221562
+frozenset({'Non Fat Raspberry Yogurt'}),frozenset({'Nonfat Icelandic Style Strawberry Yogurt'}),0.0012464358452138494,0.22633136094674558,64.36024993717302
+frozenset({'Nonfat Icelandic Style Strawberry Yogurt'}),frozenset({'Non Fat Raspberry Yogurt'}),0.0012464358452138494,0.3544401544401545,64.36024993717301
+frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),"frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach', 'Total 2% with Strawberry Lowfat Greek Strained Yogurt'})",0.001227427019687712,0.17371252882398155,62.470350331475785
+"frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach', 'Total 2% with Strawberry Lowfat Greek Strained Yogurt'})",frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),0.001227427019687712,0.44140624999999994,62.47035033147578
+frozenset({'Vanilla Skyr Nonfat Yogurt'}),frozenset({'Nonfat Icelandic Style Strawberry Yogurt'}),0.0013306177868295994,0.2145359019264448,61.006058598002554
+frozenset({'Nonfat Icelandic Style Strawberry Yogurt'}),frozenset({'Vanilla Skyr Nonfat Yogurt'}),0.0013306177868295994,0.37837837837837834,61.00605859800255
+"frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry', 'Total 2% with Strawberry Lowfat Greek Strained Yogurt'})",frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),0.001227427019687712,0.3937282229965157,58.605666175613145
+frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),"frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry', 'Total 2% with Strawberry Lowfat Greek Strained Yogurt'})",0.001227427019687712,0.1827000808407437,58.60566617561313
+frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),frozenset({'Vanilla Skyr Nonfat Yogurt'}),0.002335369993211134,0.3614964270701976,58.28417656243444
+frozenset({'Vanilla Skyr Nonfat Yogurt'}),frozenset({'Icelandic Style Skyr Blueberry Non-fat Yogurt'}),0.002335369993211134,0.37653239929947463,58.28417656243444
+frozenset({'Total 2% with Strawberry Lowfat Greek Strained Yogurt'}),"frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach', 'Total 2% Lowfat Greek Strained Yogurt With Blueberry'})",0.001227427019687712,0.1204690831556503,56.72984638371895
+"frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach', 'Total 2% Lowfat Greek Strained Yogurt With Blueberry'})",frozenset({'Total 2% with Strawberry Lowfat Greek Strained Yogurt'}),0.001227427019687712,0.5780051150895139,56.72984638371894
+frozenset({'Vanilla Skyr Nonfat Yogurt'}),frozenset({'Non Fat Raspberry Yogurt'}),0.0017080787508486084,0.2753940455341506,50.0068329723624
+frozenset({'Non Fat Raspberry Yogurt'}),frozenset({'Vanilla Skyr Nonfat Yogurt'}),0.0017080787508486084,0.31015779092702167,50.0068329723624
+frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),0.0021235573659198915,0.30053804765564957,44.73449314842076
+frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),0.0021235573659198915,0.31608730800323365,44.734493148420746
+frozenset({'Zero Calorie Cola'}),frozenset({'Soda'}),0.0012817379497623896,0.4724724724724724,43.51875637518458
+frozenset({'Soda'}),frozenset({'Zero Calorie Cola'}),0.0012817379497623896,0.11805902951475736,43.51875637518458
+frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),frozenset({'Total 2% with Strawberry Lowfat Greek Strained Yogurt'}),0.00311744738628649,0.44119907763259025,43.3026546743607
+frozenset({'Total 2% with Strawberry Lowfat Greek Strained Yogurt'}),frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),0.00311744738628649,0.3059701492537313,43.3026546743607
+frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),frozenset({'Total 2% Greek Strained Yogurt with Cherry 5.3 oz'}),0.0018384249830278344,0.26018447348193696,41.80319910982691
+frozenset({'Total 2% Greek Strained Yogurt with Cherry 5.3 oz'}),frozenset({'Total 2% Lowfat Greek Strained Yogurt With Blueberry'}),0.0018384249830278344,0.29537521815008727,41.80319910982691
+frozenset({'Total 2% Greek Strained Yogurt with Cherry 5.3 oz'}),frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),0.0016999321113374067,0.2731239092495637,40.653952943068646
+frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),frozenset({'Total 2% Greek Strained Yogurt with Cherry 5.3 oz'}),0.0016999321113374067,0.25303152789005656,40.65395294306864
+frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),frozenset({'Total 2% with Strawberry Lowfat Greek Strained Yogurt'}),0.0027807196198234895,0.4139046079223929,40.62376648918475
+frozenset({'Total 2% with Strawberry Lowfat Greek Strained Yogurt'}),frozenset({'Total 2% Lowfat Greek Strained Yogurt with Peach'}),0.0027807196198234895,0.27292110874200426,40.62376648918475
+frozenset({'Clementines'}),frozenset({'Apples'}),0.0012735913102511882,0.13078639152258786,32.12947877130952
+frozenset({'Apples'}),frozenset({'Clementines'}),0.0012735913102511882,0.31287525016677786,32.12947877130952

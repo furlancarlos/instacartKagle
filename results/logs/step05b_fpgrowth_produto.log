@@ -1,0 +1,94 @@
+2026-09-26 13:27:17 | INFO | ============================================================
+2026-09-26 13:27:17 | INFO | STEP 05b — FP-Growth em PRODUTO (supports baixos)
+2026-09-26 13:27:17 | INFO | ============================================================
+2026-09-26 13:27:17 | INFO | N_SAMPLE_ORDERS=400,000
+2026-09-26 13:27:17 | INFO | min_support testados: [0.003, 0.002, 0.001]
+2026-09-26 13:27:17 | INFO | [RAM] início: 167.1 MB
+2026-09-26 13:27:17 | INFO | Carregando matriz de encoded_400k.parquet ...
+2026-09-26 13:27:20 | INFO |   shape: (368250, 5991)
+2026-09-26 13:27:20 | INFO | ------------------------------------------------------------
+2026-09-26 13:27:20 | INFO | FP-Growth [PRODUTO] min_support=0.003
+2026-09-26 13:27:20 | INFO | [RAM] antes: 2,584.9 MB
+2026-09-26 13:28:06 | INFO |   tempo: 46.35s | itemsets: 880
+2026-09-26 13:28:06 | INFO | [RAM] depois: 2,926.8 MB
+2026-09-26 13:28:06 | INFO |   Distribuição por tamanho:
+2026-09-26 13:28:06 | INFO |     len=1:      548 itemsets | support 0.00300–0.15923
+2026-09-26 13:28:06 | INFO |     len=2:      324 itemsets | support 0.00300–0.02108
+2026-09-26 13:28:06 | INFO |     len=3:        8 itemsets | support 0.00310–0.00508
+2026-09-26 13:28:06 | INFO |   Top 15 itemsets (len>=2) por suporte:
+2026-09-26 13:28:06 | INFO |     0.02108 | Bag of Organic Bananas, Organic Strawberries
+2026-09-26 13:28:06 | INFO |     0.02106 | Bag of Organic Bananas, Organic Hass Avocado
+2026-09-26 13:28:06 | INFO |     0.01927 | Banana, Organic Strawberries
+2026-09-26 13:28:06 | INFO |     0.01835 | Banana, Organic Avocado
+2026-09-26 13:28:06 | INFO |     0.01743 | Banana, Organic Baby Spinach
+2026-09-26 13:28:06 | INFO |     0.01740 | Bag of Organic Bananas, Organic Baby Spinach
+2026-09-26 13:28:06 | INFO |     0.01396 | Organic Hass Avocado, Organic Strawberries
+2026-09-26 13:28:06 | INFO |     0.01389 | Banana, Strawberries
+2026-09-26 13:28:06 | INFO |     0.01387 | Banana, Large Lemon
+2026-09-26 13:28:06 | INFO |     0.01336 | Bag of Organic Bananas, Organic Raspberries
+2026-09-26 13:28:06 | INFO |     0.01315 | Organic Baby Spinach, Organic Strawberries
+2026-09-26 13:28:06 | INFO |     0.01192 | Organic Baby Spinach, Organic Hass Avocado
+2026-09-26 13:28:06 | INFO |     0.01135 | Banana, Organic Fuji Apple
+2026-09-26 13:28:06 | INFO |     0.01134 | Organic Raspberries, Organic Strawberries
+2026-09-26 13:28:06 | INFO |     0.01114 | Banana, Organic Whole Milk
+2026-09-26 13:28:06 | INFO |   salvo: itemsets_produto_support0_003.parquet  (0.02 MB)
+2026-09-26 13:28:07 | INFO | ------------------------------------------------------------
+2026-09-26 13:28:07 | INFO | FP-Growth [PRODUTO] min_support=0.002
+2026-09-26 13:28:07 | INFO | [RAM] antes: 2,308.6 MB
+2026-09-26 13:28:55 | INFO |   tempo: 48.60s | itemsets: 1,603
+2026-09-26 13:28:55 | INFO | [RAM] depois: 2,758.9 MB
+2026-09-26 13:28:55 | INFO |   Distribuição por tamanho:
+2026-09-26 13:28:55 | INFO |     len=1:      907 itemsets | support 0.00200–0.15923
+2026-09-26 13:28:55 | INFO |     len=2:      668 itemsets | support 0.00200–0.02108
+2026-09-26 13:28:55 | INFO |     len=3:       28 itemsets | support 0.00207–0.00508
+2026-09-26 13:28:55 | INFO |   Top 15 itemsets (len>=2) por suporte:
+2026-09-26 13:28:55 | INFO |     0.02108 | Bag of Organic Bananas, Organic Strawberries
+2026-09-26 13:28:55 | INFO |     0.02106 | Bag of Organic Bananas, Organic Hass Avocado
+2026-09-26 13:28:55 | INFO |     0.01927 | Banana, Organic Strawberries
+2026-09-26 13:28:55 | INFO |     0.01835 | Banana, Organic Avocado
+2026-09-26 13:28:55 | INFO |     0.01743 | Banana, Organic Baby Spinach
+2026-09-26 13:28:55 | INFO |     0.01740 | Bag of Organic Bananas, Organic Baby Spinach
+2026-09-26 13:28:55 | INFO |     0.01396 | Organic Hass Avocado, Organic Strawberries
+2026-09-26 13:28:55 | INFO |     0.01389 | Banana, Strawberries
+2026-09-26 13:28:55 | INFO |     0.01387 | Banana, Large Lemon
+2026-09-26 13:28:55 | INFO |     0.01336 | Bag of Organic Bananas, Organic Raspberries
+2026-09-26 13:28:55 | INFO |     0.01315 | Organic Baby Spinach, Organic Strawberries
+2026-09-26 13:28:55 | INFO |     0.01192 | Organic Baby Spinach, Organic Hass Avocado
+2026-09-26 13:28:55 | INFO |     0.01135 | Banana, Organic Fuji Apple
+2026-09-26 13:28:55 | INFO |     0.01134 | Organic Raspberries, Organic Strawberries
+2026-09-26 13:28:55 | INFO |     0.01114 | Banana, Organic Whole Milk
+2026-09-26 13:28:55 | INFO |   salvo: itemsets_produto_support0_002.parquet  (0.03 MB)
+2026-09-26 13:28:56 | INFO | ------------------------------------------------------------
+2026-09-26 13:28:56 | INFO | FP-Growth [PRODUTO] min_support=0.001
+2026-09-26 13:28:56 | INFO | [RAM] antes: 2,308.3 MB
+2026-09-26 13:29:51 | INFO |   tempo: 55.00s | itemsets: 4,413
+2026-09-26 13:29:51 | INFO | [RAM] depois: 2,957.5 MB
+2026-09-26 13:29:51 | INFO |   Distribuição por tamanho:
+2026-09-26 13:29:51 | INFO |     len=1:    1,918 itemsets | support 0.00100–0.15923
+2026-09-26 13:29:51 | INFO |     len=2:    2,198 itemsets | support 0.00100–0.02108
+2026-09-26 13:29:51 | INFO |     len=3:      295 itemsets | support 0.00100–0.00508
+2026-09-26 13:29:51 | INFO |     len=4:        2 itemsets | support 0.00111–0.00124
+2026-09-26 13:29:51 | INFO |   Top 15 itemsets (len>=2) por suporte:
+2026-09-26 13:29:51 | INFO |     0.02108 | Bag of Organic Bananas, Organic Strawberries
+2026-09-26 13:29:51 | INFO |     0.02106 | Bag of Organic Bananas, Organic Hass Avocado
+2026-09-26 13:29:51 | INFO |     0.01927 | Banana, Organic Strawberries
+2026-09-26 13:29:51 | INFO |     0.01835 | Banana, Organic Avocado
+2026-09-26 13:29:51 | INFO |     0.01743 | Banana, Organic Baby Spinach
+2026-09-26 13:29:51 | INFO |     0.01740 | Bag of Organic Bananas, Organic Baby Spinach
+2026-09-26 13:29:51 | INFO |     0.01396 | Organic Hass Avocado, Organic Strawberries
+2026-09-26 13:29:51 | INFO |     0.01389 | Banana, Strawberries
+2026-09-26 13:29:51 | INFO |     0.01387 | Banana, Large Lemon
+2026-09-26 13:29:51 | INFO |     0.01336 | Bag of Organic Bananas, Organic Raspberries
+2026-09-26 13:29:51 | INFO |     0.01315 | Organic Baby Spinach, Organic Strawberries
+2026-09-26 13:29:51 | INFO |     0.01192 | Organic Baby Spinach, Organic Hass Avocado
+2026-09-26 13:29:51 | INFO |     0.01135 | Banana, Organic Fuji Apple
+2026-09-26 13:29:51 | INFO |     0.01134 | Organic Raspberries, Organic Strawberries
+2026-09-26 13:29:51 | INFO |     0.01114 | Banana, Organic Whole Milk
+2026-09-26 13:29:51 | INFO |   salvo: itemsets_produto_support0_001.parquet  (0.08 MB)
+2026-09-26 13:29:53 | INFO | ============================================================
+2026-09-26 13:29:53 | INFO | Resumo comparativo [PRODUTO]:
+2026-09-26 13:29:53 | INFO |   min_support=0.003  | itemsets=     880 | len>=2=     332 | tempo=46.35s | max_len=3
+2026-09-26 13:29:53 | INFO |   min_support=0.002  | itemsets=   1,603 | len>=2=     696 | tempo=48.60s | max_len=3
+2026-09-26 13:29:53 | INFO |   min_support=0.001  | itemsets=   4,413 | len>=2=   2,495 | tempo=55.00s | max_len=4
+2026-09-26 13:29:55 | INFO | [RAM] fim: 2,340.5 MB
+2026-09-26 13:29:55 | INFO | STEP 05b concluído.

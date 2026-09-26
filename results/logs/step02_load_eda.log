@@ -1,0 +1,82 @@
+2026-09-26 10:28:56 | INFO | ============================================================
+2026-09-26 10:28:56 | INFO | STEP 02 — Carregamento + EDA inicial
+2026-09-26 10:28:56 | INFO | ============================================================
+2026-09-26 10:28:56 | INFO | Carregando tabelas pequenas...
+2026-09-26 10:28:56 | INFO |   aisles: (134, 2)
+2026-09-26 10:28:56 | INFO |   departments: (21, 2)
+2026-09-26 10:28:56 | INFO |   products: (49688, 4)
+2026-09-26 10:28:58 | INFO |   orders: (3421083, 7)
+2026-09-26 10:28:58 | INFO | Lendo order_products__prior.csv em chunks de 2,000,000 linhas...
+2026-09-26 10:29:01 | INFO |   chunk  1 | rows acumuladas:    2,000,000 | pedidos acumulados:    198,086
+2026-09-26 10:29:04 | INFO |   chunk  2 | rows acumuladas:    4,000,000 | pedidos acumulados:    396,454
+2026-09-26 10:29:07 | INFO |   chunk  3 | rows acumuladas:    6,000,000 | pedidos acumulados:    594,812
+2026-09-26 10:29:09 | INFO |   chunk  4 | rows acumuladas:    8,000,000 | pedidos acumulados:    793,239
+2026-09-26 10:29:12 | INFO |   chunk  5 | rows acumuladas:   10,000,000 | pedidos acumulados:    991,714
+2026-09-26 10:29:15 | INFO |   chunk  6 | rows acumuladas:   12,000,000 | pedidos acumulados:  1,189,898
+2026-09-26 10:29:18 | INFO |   chunk  7 | rows acumuladas:   14,000,000 | pedidos acumulados:  1,387,950
+2026-09-26 10:29:21 | INFO |   chunk  8 | rows acumuladas:   16,000,000 | pedidos acumulados:  1,585,820
+2026-09-26 10:29:24 | INFO |   chunk  9 | rows acumuladas:   18,000,000 | pedidos acumulados:  1,783,695
+2026-09-26 10:29:27 | INFO |   chunk 10 | rows acumuladas:   20,000,000 | pedidos acumulados:  1,981,984
+2026-09-26 10:29:30 | INFO |   chunk 11 | rows acumuladas:   22,000,000 | pedidos acumulados:  2,180,247
+2026-09-26 10:29:34 | INFO |   chunk 12 | rows acumuladas:   24,000,000 | pedidos acumulados:  2,378,451
+2026-09-26 10:29:37 | INFO |   chunk 13 | rows acumuladas:   26,000,000 | pedidos acumulados:  2,576,431
+2026-09-26 10:29:40 | INFO |   chunk 14 | rows acumuladas:   28,000,000 | pedidos acumulados:  2,774,728
+2026-09-26 10:29:43 | INFO |   chunk 15 | rows acumuladas:   30,000,000 | pedidos acumulados:  2,973,482
+2026-09-26 10:29:46 | INFO |   chunk 16 | rows acumuladas:   32,000,000 | pedidos acumulados:  3,171,941
+2026-09-26 10:29:47 | INFO |   chunk 17 | rows acumuladas:   32,434,489 | pedidos acumulados:  3,214,874
+2026-09-26 10:29:48 | INFO | Leitura total concluída em 50.2s | 32,434,489 linhas | 3,214,874 pedidos
+2026-09-26 10:29:51 | INFO | DataFrame agregado: (3214874, 2)
+2026-09-26 10:29:51 | INFO | Salvando cache em C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\cache\prior_by_order.parquet ...
+2026-09-26 10:29:58 | INFO |   parquet salvo: 79.6 MB
+2026-09-26 10:29:58 | INFO | ============================================================
+2026-09-26 10:29:58 | INFO | EDA — Visão geral
+2026-09-26 10:29:58 | INFO | ============================================================
+2026-09-26 10:29:58 | INFO | aisles       shape=(134, 2)  nulos=0  duplicados=0
+2026-09-26 10:29:58 | INFO | departments  shape=(21, 2)  nulos=0  duplicados=0
+2026-09-26 10:29:58 | INFO | products     shape=(49688, 4)  nulos=0  duplicados=0
+2026-09-26 10:30:00 | INFO | orders       shape=(3421083, 7)  nulos=206209  duplicados=0
+2026-09-26 10:30:00 | INFO | prior        shape=(3214874, 2)  (1 linha por pedido)
+2026-09-26 10:30:00 | INFO | ------------------------------------------------------------
+2026-09-26 10:30:00 | INFO | Nº de produtos por pedido:
+2026-09-26 10:30:00 | INFO |   min     : 1
+2026-09-26 10:30:00 | INFO |   mediana : 8
+2026-09-26 10:30:00 | INFO |   média   : 10.09
+2026-09-26 10:30:00 | INFO |   max     : 145
+2026-09-26 10:30:00 | INFO |   p95     : 25
+2026-09-26 10:30:00 | INFO |   p99     : 35
+2026-09-26 10:30:00 | INFO | Total de itens em pedidos (prior): 32,434,489
+2026-09-26 10:30:00 | INFO | Gerando gráficos...
+2026-09-26 10:33:04 | INFO | ============================================================
+2026-09-26 10:33:04 | INFO | STEP 02 — Carregamento + EDA inicial
+2026-09-26 10:33:04 | INFO | ============================================================
+2026-09-26 10:33:04 | INFO | Carregando tabelas pequenas...
+2026-09-26 10:33:04 | INFO |   aisles: (134, 2)
+2026-09-26 10:33:04 | INFO |   departments: (21, 2)
+2026-09-26 10:33:04 | INFO |   products: (49688, 4)
+2026-09-26 10:33:06 | INFO |   orders: (3421083, 7)
+2026-09-26 10:33:06 | INFO | Cache encontrado: prior_by_order.parquet. Carregando parquet...
+2026-09-26 10:33:19 | INFO |   prior (cache): (3214874, 2)
+2026-09-26 10:33:19 | INFO | ============================================================
+2026-09-26 10:33:19 | INFO | EDA — Visão geral
+2026-09-26 10:33:19 | INFO | ============================================================
+2026-09-26 10:33:19 | INFO | aisles       shape=(134, 2)  nulos=0  duplicados=0
+2026-09-26 10:33:19 | INFO | departments  shape=(21, 2)  nulos=0  duplicados=0
+2026-09-26 10:33:19 | INFO | products     shape=(49688, 4)  nulos=0  duplicados=0
+2026-09-26 10:33:21 | INFO | orders       shape=(3421083, 7)  nulos=206209  duplicados=0
+2026-09-26 10:33:21 | INFO | prior        shape=(3214874, 2)  (1 linha por pedido)
+2026-09-26 10:33:21 | INFO | ------------------------------------------------------------
+2026-09-26 10:33:21 | INFO | Nº de produtos por pedido:
+2026-09-26 10:33:21 | INFO |   min     : 1
+2026-09-26 10:33:21 | INFO |   mediana : 8
+2026-09-26 10:33:21 | INFO |   média   : 10.09
+2026-09-26 10:33:21 | INFO |   max     : 145
+2026-09-26 10:33:21 | INFO |   p95     : 25
+2026-09-26 10:33:21 | INFO |   p99     : 35
+2026-09-26 10:33:21 | INFO | Total de itens em pedidos (prior): 32,434,489
+2026-09-26 10:33:21 | INFO | Gerando gráficos...
+2026-09-26 10:33:21 | INFO | prod_full shape: (49688, 6)
+2026-09-26 10:33:21 | INFO | prod_full nulos em 'department': 0
+2026-09-26 10:33:31 | INFO | all_items shape: (32434489, 4)
+2026-09-26 10:33:39 | INFO | Gráficos salvos em: C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\figures
+2026-09-26 10:33:40 | INFO | Resumo (order_id, n_products) salvo em results/tables/
+2026-09-26 10:33:40 | INFO | STEP 02 concluído com sucesso.

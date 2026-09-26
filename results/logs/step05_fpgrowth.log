@@ -1,0 +1,94 @@
+2026-09-26 13:11:10 | INFO | ============================================================
+2026-09-26 13:11:10 | INFO | STEP 05 — FP-Growth: itemsets frequentes
+2026-09-26 13:11:10 | INFO | ============================================================
+2026-09-26 13:11:10 | INFO | N_SAMPLE_ORDERS=400,000
+2026-09-26 13:11:10 | INFO | min_support testados: [0.02, 0.01, 0.005]
+2026-09-26 13:11:10 | INFO | [RAM] início: 167.1 MB
+2026-09-26 13:11:10 | INFO | Carregando matriz de encoded_400k.parquet ...
+2026-09-26 13:11:13 | INFO |   shape: (368250, 5991)
+2026-09-26 13:11:13 | INFO |   memória: 2,104.0 MB
+2026-09-26 13:11:13 | INFO | ------------------------------------------------------------
+2026-09-26 13:11:13 | INFO | FP-Growth com min_support = 0.02
+2026-09-26 13:11:13 | INFO | [RAM] antes do FP-Growth: 2,581.6 MB
+2026-09-26 13:15:52 | INFO | ============================================================
+2026-09-26 13:15:52 | INFO | STEP 05 — FP-Growth: itemsets frequentes
+2026-09-26 13:15:52 | INFO | ============================================================
+2026-09-26 13:15:52 | INFO | N_SAMPLE_ORDERS=400,000
+2026-09-26 13:15:52 | INFO | min_support testados: [0.02, 0.01, 0.005]
+2026-09-26 13:15:52 | INFO | [RAM] início: 166.9 MB
+2026-09-26 13:15:52 | INFO | Carregando matriz de encoded_400k.parquet ...
+2026-09-26 13:15:55 | INFO |   shape: (368250, 5991)
+2026-09-26 13:15:55 | INFO |   memória: 2,104.0 MB
+2026-09-26 13:15:55 | INFO | ------------------------------------------------------------
+2026-09-26 13:15:55 | INFO | FP-Growth com min_support = 0.02
+2026-09-26 13:15:55 | INFO | [RAM] antes do FP-Growth: 2,579.0 MB
+2026-09-26 13:16:33 | INFO |   tempo: 37.93s
+2026-09-26 13:16:33 | INFO |   itemsets encontrados: 46
+2026-09-26 13:16:33 | INFO | [RAM] após FP-Growth: 2,608.6 MB
+2026-09-26 13:16:33 | INFO |   Distribuição por tamanho:
+2026-09-26 13:16:33 | INFO |     len=1:       44 itemsets | support 0.0203–0.1592
+2026-09-26 13:16:33 | INFO |     len=2:        2 itemsets | support 0.0211–0.0211
+2026-09-26 13:16:33 | INFO |   Top 10 itemsets por suporte:
+2026-09-26 13:16:33 | INFO |     0.1592 | Banana
+2026-09-26 13:16:33 | INFO |     0.1265 | Bag of Organic Bananas
+2026-09-26 13:16:33 | INFO |     0.0896 | Organic Strawberries
+2026-09-26 13:16:33 | INFO |     0.0817 | Organic Baby Spinach
+2026-09-26 13:16:33 | INFO |     0.0722 | Organic Hass Avocado
+2026-09-26 13:16:33 | INFO |     0.0600 | Organic Avocado
+2026-09-26 13:16:33 | INFO |     0.0513 | Large Lemon
+2026-09-26 13:16:33 | INFO |     0.0494 | Organic Whole Milk
+2026-09-26 13:16:33 | INFO |     0.0478 | Limes
+2026-09-26 13:16:33 | INFO |     0.0475 | Strawberries
+2026-09-26 13:16:33 | INFO |   salvo: itemsets_support0_02.parquet  (0.0 MB)
+2026-09-26 13:16:33 | INFO | ------------------------------------------------------------
+2026-09-26 13:16:33 | INFO | FP-Growth com min_support = 0.01
+2026-09-26 13:16:33 | INFO | [RAM] antes do FP-Growth: 2,304.3 MB
+2026-09-26 13:17:12 | INFO |   tempo: 39.00s
+2026-09-26 13:17:12 | INFO |   itemsets encontrados: 132
+2026-09-26 13:17:12 | INFO | [RAM] após FP-Growth: 2,406.5 MB
+2026-09-26 13:17:12 | INFO |   Distribuição por tamanho:
+2026-09-26 13:17:12 | INFO |     len=1:      113 itemsets | support 0.0100–0.1592
+2026-09-26 13:17:12 | INFO |     len=2:       19 itemsets | support 0.0107–0.0211
+2026-09-26 13:17:12 | INFO |   Top 10 itemsets por suporte:
+2026-09-26 13:17:12 | INFO |     0.1592 | Banana
+2026-09-26 13:17:12 | INFO |     0.1265 | Bag of Organic Bananas
+2026-09-26 13:17:12 | INFO |     0.0896 | Organic Strawberries
+2026-09-26 13:17:12 | INFO |     0.0817 | Organic Baby Spinach
+2026-09-26 13:17:12 | INFO |     0.0722 | Organic Hass Avocado
+2026-09-26 13:17:12 | INFO |     0.0600 | Organic Avocado
+2026-09-26 13:17:12 | INFO |     0.0513 | Large Lemon
+2026-09-26 13:17:12 | INFO |     0.0494 | Organic Whole Milk
+2026-09-26 13:17:12 | INFO |     0.0478 | Limes
+2026-09-26 13:17:12 | INFO |     0.0475 | Strawberries
+2026-09-26 13:17:12 | INFO |   salvo: itemsets_support0_01.parquet  (0.0 MB)
+2026-09-26 13:17:13 | INFO | ------------------------------------------------------------
+2026-09-26 13:17:13 | INFO | FP-Growth com min_support = 0.005
+2026-09-26 13:17:13 | INFO | [RAM] antes do FP-Growth: 2,304.4 MB
+2026-09-26 13:17:55 | INFO |   tempo: 42.06s
+2026-09-26 13:17:55 | INFO |   itemsets encontrados: 378
+2026-09-26 13:17:55 | INFO | [RAM] após FP-Growth: 2,518.7 MB
+2026-09-26 13:17:55 | INFO |   Distribuição por tamanho:
+2026-09-26 13:17:55 | INFO |     len=1:      272 itemsets | support 0.0050–0.1592
+2026-09-26 13:17:55 | INFO |     len=2:      105 itemsets | support 0.0050–0.0211
+2026-09-26 13:17:55 | INFO |     len=3:        1 itemsets | support 0.0051–0.0051
+2026-09-26 13:17:55 | INFO |   Top 10 itemsets por suporte:
+2026-09-26 13:17:55 | INFO |     0.1592 | Banana
+2026-09-26 13:17:55 | INFO |     0.1265 | Bag of Organic Bananas
+2026-09-26 13:17:55 | INFO |     0.0896 | Organic Strawberries
+2026-09-26 13:17:55 | INFO |     0.0817 | Organic Baby Spinach
+2026-09-26 13:17:55 | INFO |     0.0722 | Organic Hass Avocado
+2026-09-26 13:17:55 | INFO |     0.0600 | Organic Avocado
+2026-09-26 13:17:55 | INFO |     0.0513 | Large Lemon
+2026-09-26 13:17:55 | INFO |     0.0494 | Organic Whole Milk
+2026-09-26 13:17:55 | INFO |     0.0478 | Limes
+2026-09-26 13:17:55 | INFO |     0.0475 | Strawberries
+2026-09-26 13:17:55 | INFO |   salvo: itemsets_support0_005.parquet  (0.0 MB)
+2026-09-26 13:17:55 | INFO | ============================================================
+2026-09-26 13:17:55 | INFO | Resumo comparativo:
+2026-09-26 13:17:55 | INFO |   min_support=0.02   | itemsets=        46 | tempo=37.93s | tamanho_max=2
+2026-09-26 13:17:55 | INFO |   min_support=0.01   | itemsets=       132 | tempo=39.00s | tamanho_max=2
+2026-09-26 13:17:55 | INFO |   min_support=0.005  | itemsets=       378 | tempo=42.06s | tamanho_max=3
+2026-09-26 13:17:55 | INFO | Resumo salvo em C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\tables\fpgrowth_summary.csv
+2026-09-26 13:17:57 | INFO | Gráficos salvos em C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\figures
+2026-09-26 13:17:57 | INFO | [RAM] fim: 2,334.4 MB
+2026-09-26 13:17:57 | INFO | STEP 05 concluído com sucesso.

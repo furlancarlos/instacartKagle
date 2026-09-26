@@ -1,0 +1,163 @@
+2026-09-26 13:50:10 | INFO | ============================================================
+2026-09-26 13:50:10 | INFO | STEP 06 — Regras de Associação
+2026-09-26 13:50:10 | INFO | ============================================================
+2026-09-26 13:50:10 | INFO | [RAM] início: 167.1 MB
+2026-09-26 13:50:10 | INFO | ============================================================
+2026-09-26 13:50:10 | INFO | Pipeline: PRODUTO
+2026-09-26 13:50:10 | INFO |   itemsets base: itemsets_produto_support0_001.parquet
+2026-09-26 13:50:10 | INFO |   min_confidence testados: [0.02, 0.05, 0.1]
+2026-09-26 13:50:10 | INFO |   min_lift testados:       [1.0, 1.5, 2.0]
+2026-09-26 13:50:10 | INFO | ============================================================
+2026-09-26 13:50:10 | INFO | Carregando itemsets de itemsets_produto_support0_001.parquet ...
+2026-09-26 13:50:11 | INFO |   itemsets: 4,413
+2026-09-26 13:50:11 | INFO |   itemsets com len>=2: 2,495
+2026-09-26 13:52:50 | INFO | ============================================================
+2026-09-26 13:52:50 | INFO | STEP 06 — Regras de Associação
+2026-09-26 13:52:50 | INFO | ============================================================
+2026-09-26 13:52:50 | INFO | [RAM] início: 166.9 MB
+2026-09-26 13:52:50 | INFO | ============================================================
+2026-09-26 13:52:50 | INFO | Pipeline: PRODUTO
+2026-09-26 13:52:50 | INFO |   itemsets base: itemsets_produto_support0_001.parquet
+2026-09-26 13:52:50 | INFO |   min_confidence testados: [0.02, 0.05, 0.1]
+2026-09-26 13:52:50 | INFO |   min_lift testados:       [1.0, 1.5, 2.0]
+2026-09-26 13:52:50 | INFO | ============================================================
+2026-09-26 13:52:50 | INFO | Carregando itemsets de itemsets_produto_support0_001.parquet ...
+2026-09-26 13:52:50 | INFO |   itemsets: 4,413
+2026-09-26 13:52:50 | INFO |   itemsets com len>=2: 2,495
+2026-09-26 13:52:50 | INFO |   min_conf=0.02   | min_lift=1.0   | regras=   5,067 | tempo=0.05s
+2026-09-26 13:52:50 | INFO |     confidence: min=0.020 mediana=0.079 max=0.614
+2026-09-26 13:52:50 | INFO |     lift      : min=1.001 mediana=2.244 max=107.513
+2026-09-26 13:52:50 | INFO |   min_conf=0.02   | min_lift=1.5   | regras=   4,320 | tempo=0.04s
+2026-09-26 13:52:50 | INFO |     confidence: min=0.020 mediana=0.079 max=0.614
+2026-09-26 13:52:50 | INFO |     lift      : min=1.500 mediana=2.419 max=107.513
+2026-09-26 13:52:50 | INFO |   min_conf=0.02   | min_lift=2.0   | regras=   3,094 | tempo=0.03s
+2026-09-26 13:52:50 | INFO |     confidence: min=0.020 mediana=0.081 max=0.614
+2026-09-26 13:52:50 | INFO |     lift      : min=2.002 mediana=2.761 max=107.513
+2026-09-26 13:52:51 | INFO |   min_conf=0.05   | min_lift=1.0   | regras=   3,558 | tempo=0.03s
+2026-09-26 13:52:51 | INFO |     confidence: min=0.050 mediana=0.123 max=0.614
+2026-09-26 13:52:51 | INFO |     lift      : min=1.001 mediana=2.327 max=107.513
+2026-09-26 13:52:51 | INFO |   min_conf=0.05   | min_lift=1.5   | regras=   3,069 | tempo=0.03s
+2026-09-26 13:52:51 | INFO |     confidence: min=0.050 mediana=0.121 max=0.614
+2026-09-26 13:52:51 | INFO |     lift      : min=1.500 mediana=2.486 max=107.513
+2026-09-26 13:52:51 | INFO |   min_conf=0.05   | min_lift=2.0   | regras=   2,300 | tempo=0.04s
+2026-09-26 13:52:51 | INFO |     confidence: min=0.050 mediana=0.116 max=0.614
+2026-09-26 13:52:51 | INFO |     lift      : min=2.002 mediana=2.800 max=107.513
+2026-09-26 13:52:51 | INFO |   min_conf=0.1    | min_lift=1.0   | regras=   2,106 | tempo=0.05s
+2026-09-26 13:52:51 | INFO |     confidence: min=0.100 mediana=0.186 max=0.614
+2026-09-26 13:52:51 | INFO |     lift      : min=1.006 mediana=2.285 max=107.513
+2026-09-26 13:52:51 | INFO |   min_conf=0.1    | min_lift=1.5   | regras=   1,784 | tempo=0.03s
+2026-09-26 13:52:51 | INFO |     confidence: min=0.100 mediana=0.191 max=0.614
+2026-09-26 13:52:51 | INFO |     lift      : min=1.500 mediana=2.489 max=107.513
+2026-09-26 13:52:51 | INFO |   min_conf=0.1    | min_lift=2.0   | regras=   1,309 | tempo=0.03s
+2026-09-26 13:52:51 | INFO |     confidence: min=0.100 mediana=0.192 max=0.614
+2026-09-26 13:52:51 | INFO |     lift      : min=2.002 mediana=2.821 max=107.513
+2026-09-26 13:52:51 | INFO |   tabela de busca: rules_produto_param_search.csv
+2026-09-26 13:52:51 | INFO |   >>> Melhor conjunto: min_conf=0.02, min_lift=1.0 (5,067 regras)
+2026-09-26 13:52:52 | INFO |   Top 5 regras por LIFT:
+2026-09-26 13:52:52 | INFO |     [1] Raspberry Yoghurt -> Blueberry Yoghurt | sup=0.0010 conf=0.3661 lift=107.513
+2026-09-26 13:52:52 | INFO |     [2] Blueberry Yoghurt -> Raspberry Yoghurt | sup=0.0010 conf=0.2998 lift=107.513
+2026-09-26 13:52:52 | INFO |     [3] Non Fat Raspberry Yogurt, Vanilla Skyr Nonfat Yogurt -> Icelandic Style Skyr Blueberry Non-fat Yogurt | sup=0.0010 conf=0.6137 lift=94.992
+2026-09-26 13:52:52 | INFO |     [4] Icelandic Style Skyr Blueberry Non-fat Yogurt -> Non Fat Raspberry Yogurt, Vanilla Skyr Nonfat Yogurt | sup=0.0010 conf=0.1623 lift=94.992
+2026-09-26 13:52:52 | INFO |     [5] Kiwi Sandia Sparkling Water -> Blackberry Cucumber Sparkling Water | sup=0.0011 conf=0.3491 lift=88.604
+2026-09-26 13:52:52 | INFO |   regras salvas: rules_produto.parquet
+2026-09-26 13:52:52 | INFO |   top 50 (CSV): top50_regras_produto.csv
+2026-09-26 13:52:52 | INFO | ============================================================
+2026-09-26 13:52:52 | INFO | Pipeline: AISLE
+2026-09-26 13:52:52 | INFO |   itemsets base: itemsets_aisle_support0_02.parquet
+2026-09-26 13:52:52 | INFO |   min_confidence testados: [0.2, 0.3, 0.4]
+2026-09-26 13:52:52 | INFO |   min_lift testados:       [1.0, 1.2, 1.5]
+2026-09-26 13:52:52 | INFO | ============================================================
+2026-09-26 13:52:52 | INFO | Carregando itemsets de itemsets_aisle_support0_02.parquet ...
+2026-09-26 13:52:52 | INFO |   itemsets: 692
+2026-09-26 13:52:52 | INFO |   itemsets com len>=2: 627
+2026-09-26 13:52:52 | INFO |   min_conf=0.2    | min_lift=1.0   | regras=   1,841 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.200 mediana=0.430 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.001 mediana=1.471 max=2.690
+2026-09-26 13:52:52 | INFO |   min_conf=0.2    | min_lift=1.2   | regras=   1,640 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.200 mediana=0.432 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.200 mediana=1.506 max=2.690
+2026-09-26 13:52:52 | INFO |   min_conf=0.2    | min_lift=1.5   | regras=     834 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.200 mediana=0.403 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.500 mediana=1.699 max=2.690
+2026-09-26 13:52:52 | INFO |   min_conf=0.3    | min_lift=1.0   | regras=   1,352 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.300 mediana=0.549 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.001 mediana=1.449 max=2.690
+2026-09-26 13:52:52 | INFO |   min_conf=0.3    | min_lift=1.2   | regras=   1,220 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.300 mediana=0.551 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.201 mediana=1.476 max=2.690
+2026-09-26 13:52:52 | INFO |   min_conf=0.3    | min_lift=1.5   | regras=     558 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.300 mediana=0.470 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.500 mediana=1.669 max=2.690
+2026-09-26 13:52:52 | INFO |   min_conf=0.4    | min_lift=1.0   | regras=   1,014 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.400 mediana=0.621 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.006 mediana=1.448 max=2.431
+2026-09-26 13:52:52 | INFO |   min_conf=0.4    | min_lift=1.2   | regras=     916 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.400 mediana=0.621 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.201 mediana=1.476 max=2.431
+2026-09-26 13:52:52 | INFO |   min_conf=0.4    | min_lift=1.5   | regras=     424 | tempo=0.02s
+2026-09-26 13:52:52 | INFO |     confidence: min=0.401 mediana=0.557 max=0.912
+2026-09-26 13:52:52 | INFO |     lift      : min=1.500 mediana=1.654 max=2.431
+2026-09-26 13:52:52 | INFO |   tabela de busca: rules_aisle_param_search.csv
+2026-09-26 13:52:53 | INFO |   >>> Melhor conjunto: min_conf=0.2, min_lift=1.0 (1,841 regras)
+2026-09-26 13:52:53 | INFO |   Top 5 regras por LIFT:
+2026-09-26 13:52:53 | INFO |     [1] fresh fruits, packaged cheese, yogurt -> milk, packaged vegetables fruits | sup=0.0205 conf=0.3057 lift=2.690
+2026-09-26 13:52:53 | INFO |     [2] fresh fruits, milk, packaged vegetables fruits -> packaged cheese, yogurt | sup=0.0205 conf=0.2203 lift=2.638
+2026-09-26 13:52:53 | INFO |     [3] packaged cheese, yogurt -> fresh fruits, milk, packaged vegetables fruits | sup=0.0205 conf=0.2453 lift=2.638
+2026-09-26 13:52:53 | INFO |     [4] fresh fruits, milk, packaged cheese -> packaged vegetables fruits, yogurt | sup=0.0205 conf=0.3335 lift=2.589
+2026-09-26 13:52:53 | INFO |     [5] milk, packaged vegetables fruits, yogurt -> fresh fruits, packaged cheese | sup=0.0205 conf=0.3980 lift=2.530
+2026-09-26 13:52:53 | INFO |   regras salvas: rules_aisle.parquet
+2026-09-26 13:52:53 | INFO |   top 50 (CSV): top50_regras_aisle.csv
+2026-09-26 13:52:54 | INFO | ============================================================
+2026-09-26 13:52:54 | INFO | Pipeline: DEPARTMENT
+2026-09-26 13:52:54 | INFO |   itemsets base: itemsets_department_support0_05.parquet
+2026-09-26 13:52:54 | INFO |   min_confidence testados: [0.3, 0.4, 0.5]
+2026-09-26 13:52:54 | INFO |   min_lift testados:       [1.0, 1.1, 1.2]
+2026-09-26 13:52:54 | INFO | ============================================================
+2026-09-26 13:52:54 | INFO | Carregando itemsets de itemsets_department_support0_05.parquet ...
+2026-09-26 13:52:54 | INFO |   itemsets: 242
+2026-09-26 13:52:54 | INFO |   itemsets com len>=2: 228
+2026-09-26 13:52:54 | INFO |   min_conf=0.3    | min_lift=1.0   | regras=     940 | tempo=0.02s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.300 mediana=0.464 max=0.952
+2026-09-26 13:52:54 | INFO |     lift      : min=1.006 mediana=1.269 max=1.848
+2026-09-26 13:52:54 | INFO |   min_conf=0.3    | min_lift=1.1   | regras=     838 | tempo=0.01s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.300 mediana=0.454 max=0.952
+2026-09-26 13:52:54 | INFO |     lift      : min=1.101 mediana=1.304 max=1.848
+2026-09-26 13:52:54 | INFO |   min_conf=0.3    | min_lift=1.2   | regras=     609 | tempo=0.02s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.300 mediana=0.424 max=0.908
+2026-09-26 13:52:54 | INFO |     lift      : min=1.201 mediana=1.367 max=1.848
+2026-09-26 13:52:54 | INFO |   min_conf=0.4    | min_lift=1.0   | regras=     646 | tempo=0.01s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.400 mediana=0.533 max=0.952
+2026-09-26 13:52:54 | INFO |     lift      : min=1.006 mediana=1.227 max=1.838
+2026-09-26 13:52:54 | INFO |   min_conf=0.4    | min_lift=1.1   | regras=     559 | tempo=0.01s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.400 mediana=0.526 max=0.952
+2026-09-26 13:52:54 | INFO |     lift      : min=1.101 mediana=1.268 max=1.838
+2026-09-26 13:52:54 | INFO |   min_conf=0.4    | min_lift=1.2   | regras=     369 | tempo=0.01s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.400 mediana=0.485 max=0.908
+2026-09-26 13:52:54 | INFO |     lift      : min=1.201 mediana=1.355 max=1.838
+2026-09-26 13:52:54 | INFO |   min_conf=0.5    | min_lift=1.0   | regras=     381 | tempo=0.01s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.500 mediana=0.825 max=0.952
+2026-09-26 13:52:54 | INFO |     lift      : min=1.009 mediana=1.182 max=1.726
+2026-09-26 13:52:54 | INFO |   min_conf=0.5    | min_lift=1.1   | regras=     324 | tempo=0.01s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.500 mediana=0.820 max=0.952
+2026-09-26 13:52:54 | INFO |     lift      : min=1.101 mediana=1.201 max=1.726
+2026-09-26 13:52:54 | INFO |   min_conf=0.5    | min_lift=1.2   | regras=     164 | tempo=0.01s
+2026-09-26 13:52:54 | INFO |     confidence: min=0.500 mediana=0.585 max=0.908
+2026-09-26 13:52:54 | INFO |     lift      : min=1.201 mediana=1.303 max=1.726
+2026-09-26 13:52:54 | INFO |   tabela de busca: rules_department_param_search.csv
+2026-09-26 13:52:54 | INFO |   >>> Melhor conjunto: min_conf=0.3, min_lift=1.0 (940 regras)
+2026-09-26 13:52:55 | INFO |   Top 5 regras por LIFT:
+2026-09-26 13:52:55 | INFO |     [1] canned goods, dairy eggs -> dry goods pasta | sup=0.0510 conf=0.3180 lift=1.848
+2026-09-26 13:52:55 | INFO |     [2] deli, frozen -> dairy eggs, produce, snacks | sup=0.0512 conf=0.4848 lift=1.838
+2026-09-26 13:52:55 | INFO |     [3] frozen, produce, snacks -> dairy eggs, deli | sup=0.0512 conf=0.3504 lift=1.827
+2026-09-26 13:52:55 | INFO |     [4] dry goods pasta, produce -> canned goods | sup=0.0550 conf=0.3621 lift=1.789
+2026-09-26 13:52:55 | INFO |     [5] dairy eggs, dry goods pasta -> canned goods | sup=0.0510 conf=0.3607 lift=1.782
+2026-09-26 13:52:55 | INFO |   regras salvas: rules_department.parquet
+2026-09-26 13:52:55 | INFO |   top 50 (CSV): top50_regras_department.csv
+2026-09-26 13:52:55 | INFO | ============================================================
+2026-09-26 13:52:55 | INFO | Resumo geral:
+2026-09-26 13:52:55 | INFO | ============================================================
+2026-09-26 13:52:55 | INFO |   [   produto] best: min_conf=0.02 min_lift=1.0 | regras=5,067
+2026-09-26 13:52:55 | INFO |   [     aisle] best: min_conf=0.2 min_lift=1.0 | regras=1,841
+2026-09-26 13:52:55 | INFO |   [department] best: min_conf=0.3 min_lift=1.0 | regras=940
+2026-09-26 13:52:55 | INFO | [RAM] fim: 210.1 MB
+2026-09-26 13:52:55 | INFO | STEP 06 concluído.

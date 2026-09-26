@@ -1,0 +1,28 @@
+2026-09-26 09:53:37 | INFO | ============================================================
+2026-09-26 09:53:37 | INFO | STEP 01 — Verificação do ambiente
+2026-09-26 09:53:37 | INFO | ============================================================
+2026-09-26 09:53:37 | INFO | BASE_DIR : C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1
+2026-09-26 09:53:37 | INFO | DATA_DIR : C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\database
+2026-09-26 09:53:37 | INFO | RESULTS  : C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results
+2026-09-26 09:53:37 | INFO | ------------------------------------------------------------
+2026-09-26 09:53:37 | INFO | Arquivos em database/:
+2026-09-26 09:53:37 | INFO |       2.5 KB  aisles.csv
+2026-09-26 09:53:37 | INFO |      270.0 B  departments.csv
+2026-09-26 09:53:37 | INFO |     550.8 MB  order_products__prior.csv
+2026-09-26 09:53:37 | INFO |      23.5 MB  order_products__train.csv
+2026-09-26 09:53:37 | INFO |     103.9 MB  orders.csv
+2026-09-26 09:53:37 | INFO |       2.1 MB  products.csv
+2026-09-26 09:53:37 | INFO | ------------------------------------------------------------
+2026-09-26 09:53:37 | INFO | Checagem dos arquivos esperados:
+2026-09-26 09:53:37 | INFO |   ✓ orders.csv
+2026-09-26 09:53:37 | INFO |   ✓ order_products__prior.csv
+2026-09-26 09:53:37 | INFO |   ✓ order_products__train.csv
+2026-09-26 09:53:37 | INFO |   ✓ products.csv
+2026-09-26 09:53:37 | INFO |   ✓ aisles.csv
+2026-09-26 09:53:37 | INFO |   ✓ departments.csv
+2026-09-26 09:53:37 | INFO | ------------------------------------------------------------
+2026-09-26 09:53:37 | INFO | Pandas  : 3.0.6
+2026-09-26 09:53:37 | INFO | NumPy   : 2.5.3
+2026-09-26 09:53:37 | INFO | mlxtend : 0.25.0
+2026-09-26 09:53:37 | INFO | pyarrow : 25.0.1
+2026-09-26 09:53:37 | INFO | STEP 01 concluído com sucesso.

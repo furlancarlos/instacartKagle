@@ -1,0 +1,82 @@
+2026-09-26 12:29:06 | INFO | ============================================================
+2026-09-26 12:29:06 | INFO | STEP 03 — Amostragem + filtro + construção de transações
+2026-09-26 12:29:06 | INFO | ============================================================
+2026-09-26 12:29:06 | INFO | Parâmetros: N_SAMPLE_ORDERS=200,000 | MIN_PRODUCT_FREQ=100 | RANDOM_SEED=42
+2026-09-26 12:29:06 | INFO | Carregando prior de prior_by_order.parquet ...
+2026-09-26 12:29:14 | INFO |   prior: (3214874, 2)
+2026-09-26 12:29:15 | INFO | Amostrados 200,000 pedidos de 3,214,874 (6.22%)
+2026-09-26 12:29:15 | INFO | Carregando products.csv ...
+2026-09-26 12:29:15 | INFO |   produtos mapeados: 49,688
+2026-09-26 12:29:15 | INFO | Contando frequência de product_id na amostra ...
+2026-09-26 12:29:16 | INFO |   produtos distintos na amostra: 40,557
+2026-09-26 12:29:16 | INFO | Filtrando produtos com frequência >= 100 ...
+2026-09-26 12:29:16 | INFO |   produtos válidos: 3,410 (8.41% do total)
+2026-09-26 12:29:16 | INFO |   cobertura de itens: 1,520,847/2,018,111 (75.36%)
+2026-09-26 12:29:16 | INFO | Reconstruindo cestas apenas com produtos válidos ...
+2026-09-26 12:29:17 | INFO |   cestas com >= 2 produtos: 178,969 (de 200,000 originais)
+2026-09-26 12:29:17 | INFO | Convertendo product_id -> product_name ...
+2026-09-26 12:29:17 | INFO |   cestas finais: 178,969
+2026-09-26 12:29:17 | INFO | ------------------------------------------------------------
+2026-09-26 12:29:17 | INFO | Estatísticas das cestas finais:
+2026-09-26 12:29:17 | INFO |   nº cestas     : 178,969
+2026-09-26 12:29:17 | INFO |   tamanho min   : 2
+2026-09-26 12:29:17 | INFO |   mediana       : 7
+2026-09-26 12:29:17 | INFO |   média         : 8.41
+2026-09-26 12:29:17 | INFO |   max           : 72
+2026-09-26 12:29:17 | INFO |   total de itens: 1,505,172
+2026-09-26 12:29:17 | INFO | Salvando transações em transactions.parquet ...
+2026-09-26 12:29:18 | INFO |   salvo: C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\cache\transactions.parquet
+2026-09-26 12:29:18 | INFO | ------------------------------------------------------------
+2026-09-26 12:29:18 | INFO | Exemplos de cestas (10 primeiras):
+2026-09-26 12:29:18 | INFO |   [0] (9) Plain Pre-Sliced Bagels, Chewy 25% Low Sugar Chocolate Chip Granola, Oats & Chocolate Chewy Bars, Nutri-Grain Soft Baked Strawberry Cereal Breakfast Bars, Tiny Twists Pretzels, Tra...
+2026-09-26 12:29:18 | INFO |   [1] (4) Teriyaki & Pineapple Chicken Meatballs, Traditional Refried Beans, Tortilla Strips Restaurant Style, Extra Virgin Olive Oil
+2026-09-26 12:29:18 | INFO |   [2] (5) Strawberries, Organic Blueberries, Raspberries, Beef Franks, Golden Pineapple
+2026-09-26 12:29:18 | INFO |   [3] (6) Organic Chicken Bone Broth, Yo Baby Organic Whole Milk Banana Mango Yogurt, YoKids Squeezers Organic Low-Fat Yogurt, Strawberry, Low Sodium Beef Broth, Gluten-Free Chicken Nuggets,...
+2026-09-26 12:29:18 | INFO |   [4] (4) Apple Cider Vinegar, Banana, Gala Apples, Cucumber Kirby
+2026-09-26 12:29:18 | INFO |   [5] (7) Wild Blend Rice, Reduced-fat Soft Cream Cheese, Garlic Powder, Boneless Skinless Chicken Breast, Turkey, Red Bell Pepper, Red Potatoes
+2026-09-26 12:29:18 | INFO |   [6] (7) Bag of Organic Bananas, Plain Greek Yogurt, Organic Grade A Large Brown Eggs, Cherry Garcia Ice Cream, Prosciutto, Thick & Crispy Tortilla Chips, High Pulp Orange Juice
+2026-09-26 12:29:18 | INFO |   [7] (7) Baby Food Stage 2 Blueberry Pear & Purple Carrot, Organic Whole Milk, Spinach Peas & Pear Stage 2 Baby Food, Baby Food Pouch - Roasted Carrot Spinach & Beans, Chocolate Peanut Butt...
+2026-09-26 12:29:18 | INFO |   [8] (3) Seedless Watermelon, Grape Tomatoes, Mini Sweet Peppers
+2026-09-26 12:29:18 | INFO |   [9] (20) Goodness Grapeness Organic Juice Drink, Organic Baby Spinach, Wild Berry Smoothie, Organic Jasmine Rice, Sea Salt Potato Chips, Organic Beef Hot Dogs, Buttermilk Biscuits, Organic ...
+2026-09-26 12:29:18 | INFO | STEP 03 concluído com sucesso.
+2026-09-26 12:35:26 | INFO | ============================================================
+2026-09-26 12:35:26 | INFO | STEP 03 — Amostragem + filtro + construção de transações
+2026-09-26 12:35:26 | INFO | ============================================================
+2026-09-26 12:35:26 | INFO | Parâmetros: N_SAMPLE_ORDERS=400,000 | MIN_PRODUCT_FREQ=100 | RANDOM_SEED=42
+2026-09-26 12:35:26 | INFO | Carregando prior de prior_by_order.parquet ...
+2026-09-26 12:35:32 | INFO |   prior: (3214874, 2)
+2026-09-26 12:35:33 | INFO | Amostrados 400,000 pedidos de 3,214,874 (12.44%)
+2026-09-26 12:35:33 | INFO | Carregando products.csv ...
+2026-09-26 12:35:33 | INFO |   produtos mapeados: 49,688
+2026-09-26 12:35:33 | INFO | Contando frequência de product_id na amostra ...
+2026-09-26 12:35:35 | INFO |   produtos distintos na amostra: 44,901
+2026-09-26 12:35:35 | INFO | Filtrando produtos com frequência >= 100 ...
+2026-09-26 12:35:35 | INFO |   produtos válidos: 5,992 (13.34% do total)
+2026-09-26 12:35:35 | INFO |   cobertura de itens: 3,404,083/4,035,031 (84.36%)
+2026-09-26 12:35:35 | INFO | Reconstruindo cestas apenas com produtos válidos ...
+2026-09-26 12:35:36 | INFO |   cestas com >= 2 produtos: 368,250 (de 400,000 originais)
+2026-09-26 12:35:36 | INFO | Convertendo product_id -> product_name ...
+2026-09-26 12:35:37 | INFO |   cestas finais: 368,250
+2026-09-26 12:35:37 | INFO | ------------------------------------------------------------
+2026-09-26 12:35:37 | INFO | Estatísticas das cestas finais:
+2026-09-26 12:35:37 | INFO |   nº cestas     : 368,250
+2026-09-26 12:35:37 | INFO |   tamanho min   : 2
+2026-09-26 12:35:37 | INFO |   mediana       : 7
+2026-09-26 12:35:37 | INFO |   média         : 9.17
+2026-09-26 12:35:37 | INFO |   max           : 78
+2026-09-26 12:35:37 | INFO |   total de itens: 3,378,090
+2026-09-26 12:35:37 | INFO | Salvando transações em transactions.parquet ...
+2026-09-26 12:35:38 | INFO |   salvo: C:\Fatec\06-Termo\Mineração_Dados-Muzzi\P1\results\cache\transactions.parquet
+2026-09-26 12:35:38 | INFO | ------------------------------------------------------------
+2026-09-26 12:35:38 | INFO | Exemplos de cestas (10 primeiras):
+2026-09-26 12:35:38 | INFO |   [0] (12) Plain Pre-Sliced Bagels, Chewy 25% Low Sugar Chocolate Chip Granola, Oats & Chocolate Chewy Bars, Kellogg's Nutri-Grain Apple Cinnamon Cereal, Nutri-Grain Soft Baked Strawberry Cer...
+2026-09-26 12:35:38 | INFO |   [1] (2) Orange Juice, Pineapple Chunks
+2026-09-26 12:35:38 | INFO |   [2] (4) Teriyaki & Pineapple Chicken Meatballs, Traditional Refried Beans, Tortilla Strips Restaurant Style, Extra Virgin Olive Oil
+2026-09-26 12:35:38 | INFO |   [3] (8) Organic Unsweetened Almond Milk, Banana, Red Grapefruit, Boneless Skinless Chicken Breasts, Organic Egg Whites, Organic Baby Spinach, Berry Medley, Organic Avocado
+2026-09-26 12:35:38 | INFO |   [4] (7) Gluten Free Mushroom Risotto Bowl, Cold-Brew Black Coffee, Kale, Apple, Ginger, Romaine, Spinach, Cucumber, Celery, Parsley, Lemon Cold Pressed Juice Beverage, Organic Olive Oil Sp...
+2026-09-26 12:35:38 | INFO |   [5] (5) Strawberries, Organic Blueberries, Raspberries, Beef Franks, Golden Pineapple
+2026-09-26 12:35:38 | INFO |   [6] (6) Organic Chicken Bone Broth, Yo Baby Organic Whole Milk Banana Mango Yogurt, YoKids Squeezers Organic Low-Fat Yogurt, Strawberry, Low Sodium Beef Broth, Gluten-Free Chicken Nuggets,...
+2026-09-26 12:35:38 | INFO |   [7] (5) Milk Whole, Yellow Straightneck Squash, Acorn Squash, Organic Extra Virgin Olive Oil, Italian Sparkling Pomegranate And Orange Soda
+2026-09-26 12:35:38 | INFO |   [8] (4) Apple Cider Vinegar, Banana, Gala Apples, Cucumber Kirby
+2026-09-26 12:35:38 | INFO |   [9] (9) Wild Blend Rice, Reduced-fat Soft Cream Cheese, Garlic Powder, Steamfresh Selects Frozen Broccoli, Cauliflower & Carrots, Steamfresh Premium Selects Frozen Whole Green Beans, Bonel...
+2026-09-26 12:35:38 | INFO | STEP 03 concluído com sucesso.

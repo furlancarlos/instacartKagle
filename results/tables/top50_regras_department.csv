@@ -1,0 +1,51 @@
+antecedents,consequents,support,confidence,lift
+"frozenset({'canned goods', 'dairy eggs'})",frozenset({'dry goods pasta'}),0.05097179222566219,0.31796641690956884,1.8477328814714975
+"frozenset({'frozen', 'deli'})","frozenset({'snacks', 'produce', 'dairy eggs'})",0.05118392386194244,0.4847950040727667,1.8376569002992997
+"frozenset({'snacks', 'produce', 'frozen'})","frozenset({'deli', 'dairy eggs'})",0.05118392386194244,0.3504347314086082,1.8268523477879564
+"frozenset({'dry goods pasta', 'produce'})",frozenset({'canned goods'}),0.05503095975232198,0.36208457504998304,1.7888088705787495
+"frozenset({'dry goods pasta', 'dairy eggs'})",frozenset({'canned goods'}),0.05097179222566219,0.3607425441265976,1.7821788261478002
+"frozenset({'beverages', 'deli'})","frozenset({'snacks', 'produce', 'dairy eggs'})",0.05237358101135191,0.4669529213310842,1.7700249606330183
+"frozenset({'bakery', 'frozen'})","frozenset({'snacks', 'produce', 'dairy eggs'})",0.05396743492718725,0.4668567885926845,1.769660561271266
+"frozenset({'produce', 'canned goods'})",frozenset({'dry goods pasta'}),0.05503095975232198,0.30245308881221344,1.7575834666208985
+frozenset({'dry goods pasta'}),"frozenset({'produce', 'canned goods'})",0.05503095975232198,0.3197901049475262,1.7575834666208983
+"frozenset({'snacks', 'frozen', 'dairy eggs'})","frozenset({'produce', 'deli'})",0.05118392386194244,0.3674246321638029,1.748409568996849
+"frozenset({'snacks', 'frozen'})","frozenset({'produce', 'deli', 'dairy eggs'})",0.05118392386194244,0.30143161022385795,1.7481239366010641
+"frozenset({'produce', 'frozen', 'deli'})","frozenset({'snacks', 'dairy eggs'})",0.05118392386194244,0.5366858036009499,1.726461413944627
+"frozenset({'snacks', 'produce', 'frozen', 'dairy eggs'})",frozenset({'deli'}),0.05118392386194244,0.4117565666582109,1.71367917050097
+"frozenset({'produce', 'beverages', 'deli'})","frozenset({'snacks', 'dairy eggs'})",0.05237358101135191,0.5326530612244897,1.7134885086458043
+"frozenset({'deli', 'frozen', 'dairy eggs'})","frozenset({'snacks', 'produce'})",0.05118392386194244,0.5709032773780975,1.7106061455260178
+"frozenset({'produce', 'bakery', 'frozen'})","frozenset({'snacks', 'dairy eggs'})",0.05396743492718725,0.530803281924042,1.7075379644631392
+"frozenset({'snacks', 'bakery'})","frozenset({'produce', 'frozen', 'dairy eggs'})",0.05396743492718725,0.40832881466218424,1.7038244005066487
+"frozenset({'snacks', 'produce', 'bakery'})","frozenset({'frozen', 'dairy eggs'})",0.05396743492718725,0.4691136527871222,1.7017699989419908
+frozenset({'dry goods pasta'}),frozenset({'canned goods'}),0.05913886022245155,0.34366150258204226,1.6977932412898786
+"frozenset({'snacks', 'deli'})","frozenset({'produce', 'frozen', 'dairy eggs'})",0.05118392386194244,0.40572168696600625,1.692945697793347
+"frozenset({'snacks', 'frozen', 'dairy eggs'})","frozenset({'produce', 'bakery'})",0.05396743492718725,0.38740611173989103,1.687470319648173
+"frozenset({'beverages', 'deli', 'dairy eggs'})","frozenset({'snacks', 'produce'})",0.05237358101135191,0.5631762276132055,1.687453469164947
+"frozenset({'snacks', 'frozen'})","frozenset({'deli', 'dairy eggs'})",0.054881894278179105,0.3232096431103758,1.6849251584467617
+"frozenset({'snacks', 'bakery'})",frozenset({'deli'}),0.05344283912395367,0.40435961392473707,1.6828939812630377
+"frozenset({'frozen', 'deli'})","frozenset({'snacks', 'dairy eggs'})",0.054881894278179105,0.5198207982622861,1.6722084771838426
+"frozenset({'snacks', 'produce', 'frozen'})","frozenset({'bakery', 'dairy eggs'})",0.05396743492718725,0.36949225726678575,1.6685049905495792
+"frozenset({'snacks', 'produce', 'beverages'})","frozenset({'deli', 'dairy eggs'})",0.05237358101135191,0.31922700587084146,1.6641632603261454
+"frozenset({'produce', 'beverages', 'bakery'})","frozenset({'snacks', 'dairy eggs'})",0.055564155486756105,0.517142018622769,1.6635911266725076
+"frozenset({'snacks', 'produce', 'deli'})","frozenset({'frozen', 'dairy eggs'})",0.05118392386194244,0.45858482085527164,1.6635753094481498
+"frozenset({'beverages', 'bakery'})","frozenset({'snacks', 'produce', 'dairy eggs'})",0.055564155486756105,0.4388173235833465,1.6633745725085258
+"frozenset({'snacks', 'frozen'})","frozenset({'produce', 'bakery', 'dairy eggs'})",0.05396743492718725,0.3178242225748726,1.6501920311228315
+"frozenset({'pantry', 'frozen'})","frozenset({'snacks', 'produce', 'dairy eggs'})",0.05638974888200894,0.4351317273873515,1.6494040051050083
+"frozenset({'beverages', 'deli'})","frozenset({'snacks', 'dairy eggs'})",0.057221075564728816,0.5101722639676941,1.64117016380017
+"frozenset({'produce', 'bakery'})","frozenset({'deli', 'dairy eggs'})",0.07223368879715629,0.3146367654771121,1.6402338643827454
+"frozenset({'deli', 'dairy eggs'})","frozenset({'produce', 'bakery'})",0.07223368879715629,0.37656165939386693,1.6402338643827452
+"frozenset({'bakery', 'frozen'})","frozenset({'snacks', 'dairy eggs'})",0.05893819516110538,0.5098574085554866,1.6401573072712647
+"frozenset({'snacks', 'frozen', 'dairy eggs'})",frozenset({'deli'}),0.054881894278179105,0.3939705731042289,1.639656096801155
+"frozenset({'snacks', 'produce', 'frozen'})",frozenset({'deli'}),0.057069143446852426,0.39072834684304525,1.626162357879309
+"frozenset({'snacks', 'produce', 'pantry'})","frozenset({'frozen', 'dairy eggs'})",0.05638974888200894,0.44803553126067636,1.6253064071564065
+"frozenset({'snacks', 'deli', 'dairy eggs'})","frozenset({'produce', 'frozen'})",0.05118392386194244,0.48628700601901026,1.6241692678411752
+"frozenset({'bakery', 'frozen', 'dairy eggs'})","frozenset({'snacks', 'produce'})",0.05396743492718725,0.5414749194661759,1.622429510548438
+"frozenset({'frozen', 'deli'})","frozenset({'snacks', 'produce'})",0.057069143446852426,0.5405376052131414,1.6196210216413618
+"frozenset({'snacks', 'bakery'})","frozenset({'frozen', 'dairy eggs'})",0.05893819516110538,0.4459386183711095,1.6176995864538783
+"frozenset({'snacks', 'produce', 'beverages', 'dairy eggs'})",frozenset({'deli'}),0.05237358101135191,0.388005181897339,1.6148288870298475
+"frozenset({'dry goods pasta', 'dairy eggs'})","frozenset({'produce', 'bakery'})",0.05235351450521729,0.37052140393588956,1.6139236139774207
+"frozenset({'snacks', 'pantry'})","frozenset({'produce', 'frozen', 'dairy eggs'})",0.05638974888200894,0.38669916845229896,1.6135708654549583
+"frozenset({'pantry', 'bakery'})","frozenset({'snacks', 'dairy eggs'})",0.051212590299277605,0.5000979760938331,1.6087622462243891
+frozenset({'dry goods pasta'}),"frozenset({'produce', 'frozen', 'dairy eggs'})",0.06625960325650729,0.38504081292686987,1.606651082898641
+"frozenset({'snacks', 'produce', 'frozen', 'dairy eggs'})",frozenset({'bakery'}),0.05396743492718725,0.4341489288102761,1.6013927053828971
+"frozenset({'snacks', 'bakery'})","frozenset({'produce', 'beverages', 'dairy eggs'})",0.055564155486756105,0.4204099338466544,1.6012031894298229
