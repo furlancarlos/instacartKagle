@@ -1,0 +1,6 @@
+# .gitignore
+# Arquivo com itens a não serem enviados ao repositório no Github
+# ================================================================
+
+# Ignorar toda a pasta database
+database/
