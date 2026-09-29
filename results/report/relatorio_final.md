@@ -29,7 +29,7 @@ Os resultados podem ser aplicados em:
 | Item | Valor |
 |---|---|
 | **Nome** | Instacart Market Basket Analysis |
-| **Fonte** | [Kaggle](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis) |
+| **Fonte** | Kaggle - https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis |
 | **Registros em `orders`** | 3.421.083 |
 | **Registros em `order_products__prior`** | 32.434.489 |
 | **Produtos distintos** | 49.688 |
@@ -416,19 +416,24 @@ P1/
 │   ├── orders.csv [103.9 MB]
 │   └── products.csv [2.1 MB]
 ├── docs/
+│   ├── Resultado.pdf [2.2 MB]
+│   ├── Resultado_.pdf [2.3 MB]
 │   └── Trabalho e apresentação para P1.pdf [100.1 KB]
 ├── results/
 │   ├── cache/
 │   │   [20 arquivos .parquet, 119.1 MB]
 │   ├── figures/
-│   │   [31 figuras, 3.0 MB]
+│   │   [31 figuras, 3.1 MB]
+│   │   └── _Apoio/
+│   │       ├── slide_heatmap_aisle.png [383.2 KB]
+│   │       └── slide_heatmap_aisle_.png [227.2 KB]
 │   ├── logs/
-│   │   [13 logs, 103.4 KB]
+│   │   [13 logs, 106.0 KB]
 │   ├── report/
-│   │   [1 relatórios, 19.1 KB]
-│   │   └── relatorio_final.html [27.3 KB]
+│   │   [1 relatórios, 21.6 KB]
+│   │   └── relatorio_final.html [30.4 KB]
 │   ├── slides/
-│   │   └── apresentacao.pptx [171.6 KB]
+│   │   └── apresentacao.pptx [256.1 KB]
 │   └── tables/
 │       [18 tabelas, 34.1 MB]
 ├── src/
@@ -451,6 +456,7 @@ P1/
 │   ├── step10_apriori_vs_fpgrowth.py [12.4 KB]
 │   └── utils.py [2.5 KB]
 ├── .gitignore
+├── README.md [4.8 KB]
 └── requirements.txt
 ```
 
@@ -470,4 +476,4 @@ P1/
 
 ---
 
-*Relatório gerado automaticamente por `step08_report.py` em 26/09/2026 às 16:55.*
+*Relatório gerado automaticamente por `step08_report.py` em 29/09/2026 às 14:46.*

@@ -195,7 +195,7 @@ Os resultados podem ser aplicados em:
 | Item | Valor |
 |---|---|
 | **Nome** | Instacart Market Basket Analysis |
-| **Fonte** | [Kaggle](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis) |
+| **Fonte** | Kaggle - https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis |
 | **Registros em `orders`** | 3.421.083 |
 | **Registros em `order_products__prior`** | 32.434.489 |
 | **Produtos distintos** | 49.688 |
